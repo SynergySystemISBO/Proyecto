@@ -1,0 +1,144 @@
+body{
+    background-color: #d2d2d2;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    display: flex;
+}
+.header1 {
+    background-color: #2f2f2f;
+    width: 100%;
+    height: 70px;
+}
+
+.header1 p {
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.header1 a:hover{
+    color: #045D8C;
+}
+
+.header1 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.header2 {
+    background-color: #0f0f0f;
+    height: 42px;
+    display: flex;
+    margin-top: -12px;
+}
+
+.header2 img{
+    margin-top: -66px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.futbol{
+    background-color: #ffffff;
+    height: 130px;
+    width: 700px;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0f0f0f;
+    font-size: 50px;
+    border-left: #045D8C 8px solid;
+}
+
+.titulo{
+    text-decoration: none;
+    display: flex;
+}
+
+.basket{
+    background-color: #ffffff;
+    height: 130px;
+    width: 700px;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0f0f0f;
+    font-size: 50px;
+    border-right: #045D8C 8px solid;
+}
+
+.titulo{
+    text-decoration: none;
+    display: flex;
+}
+
+.handball{
+    background-color: #ffffff;
+    height: 130px;
+    width: 700px;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0f0f0f;
+    font-size: 50px;
+    border-left: #045D8C 8px solid;
+}
+
+.titulo{
+    text-decoration: none;
+    display: flex;
+}
+
+.polideportivo{
+    background-color: #ffffff;
+    height: 130px;
+    width: 700px;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0f0f0f;
+    font-size: 50px;
+    border-right: #045D8C 8px solid;
+}
+
+.titulo{
+    text-decoration: none;
+    display: flex;
+}
+
+.pie{
+    background-color: #0f0f0f;
+    height: 60px;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.pie p{
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.pie a{
+    color:#ffffff;
+    text-decoration: none;
+}

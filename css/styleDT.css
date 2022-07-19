@@ -1,0 +1,322 @@
+html {
+    min-height: 100%;
+    position: relative;
+  }
+
+body{
+    margin-bottom: 40px;
+    background-color: #d2d2d2;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    display: flex;
+}
+
+.header1 {
+    background-color: #2f2f2f;
+    width: 100%;
+    height: 70px;
+}
+
+.header1 p {
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.header1 a:hover{
+    color: #045D8C;
+}
+
+.header1 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.header2 {
+    background-color: #0f0f0f;
+    height: 42px;
+    display: flex;
+    margin-top: -12px;
+}
+
+.header2 img{
+    margin-top: -66px;
+    margin-left: 80px;
+}
+
+.header2 ul{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.header2 li{
+    color: #ffffff;
+    display: inline;
+    margin-right: 40px;
+    
+}
+
+.header2 a{
+    font-size: 22px;
+}
+
+.header2 li:hover{
+    color: #045D8C;
+}
+
+.contenido{
+    margin-top: 150px;
+    justify-content: center;
+    display: flex;
+}
+.figura1{
+    background-color: #ffffff;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+    height: 40px;
+    width: 400px;
+    float: left;
+    margin-right: 0px;
+    border-left: #045D8C 2px solid;
+    display: flex;
+    align-items: center;
+}
+
+.figura2{
+    background-color: #ffffff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+    height: 40px;
+    width: 600px;
+    margin-left: -40px;
+    padding: 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.figura1 p{
+    margin-left: 25px;
+    font-size: 22px;
+}
+
+.figura2 p{
+    margin-left: 70px;
+    font-size: 20px;
+}
+
+.Ligas p {
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.pie{
+    background-color: #0f0f0f;
+    height: 60px;
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.pie p{
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.pie a{
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.fixture{
+    justify-content: center;
+    height: 130px;
+    overflow:hidden;
+}
+
+.encabezadoFixture{
+    background-color: #ffffff;
+    height: 35px;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin: 0 auto;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.fixture li{
+    list-style: none;
+    margin-left: -40px;
+
+}
+.fecha1{
+    width: 350px;
+    background-color: #ffffff;
+    height: 35px;
+    margin:0px auto;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin-top: -30px;
+}
+.fixture p {
+    text-align: center;
+}
+
+.fixture a{
+    text-decoration: none;
+    color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+}
+.flechas{
+    height: 35px;
+    width: 125px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.FlechaI{
+    width: 35px;
+    float: left;
+    margin-right: 30px;
+}
+.FlechaD{
+    width: 35px;
+    float: right;
+}
+
+.fecha2{
+    width: 350px;
+    background-color: #ffffff;
+    height: 35px;
+    margin:0px auto;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin-top: 10px;
+}
+.fecha3{
+    width: 350px;
+    background-color: #ffffff;
+    height: 35px;
+    margin:0px auto;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin-top: 10px;
+}
+
+.escudo{
+    float: right;
+    margin-right: 550px;
+    margin-left: -150px;
+}
+
+.botonSeleccionar{
+    background-color:#045D8C ;
+    color: #ffffff;
+    height: 40px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-top: 50px;
+    margin-left: 485px;
+}
+table{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.e-jugador{
+    background-color: #ffffff;
+    height: 35px;
+    width: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.e-item2{
+    background-color: transparent;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item2{
+    background-color: #045D8C;
+    color: #ffffff;
+    height: 35px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posicion{
+    background-color: #ffffff;
+    height: 35px;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.posicion p{
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.jugador{
+    background-color: #ffffff;
+    height: 35px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enviar{
+    height: 40px;
+    width: 225px;
+    background-color: #045D8C;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.enviar:hover{
+    cursor: pointer;
+}
+
+.jugadoresNoDisponibles{
+    float: right;
+}
+
+.tabla{
+    float: left;
+    margin-left: 600px;
+}
