@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -7,10 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>S.I.G.D - Pagina</title>
-
-    <style>
-
-    </style>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -36,13 +32,15 @@
 
         <div class="sidebar-header">
             <a href="index.html" title="Ir al menu principal">
-                <img src="assets/img/logo-pagina.png" alt="" width="50px" />
+                <img src="assets/img/logo-pagina.png" alt="" class="logo-image" />
                 <h3>S.I.G.D</h3>
             </a>
         </div>
 
         <ul class="list-unstyled components">
-            <p>Bienvenido!</p>
+            <li>
+                <p>Bienvenido!</p>
+            </li>
             <li class="active">
                 <a href="index.html">Menu Principal</a>
             </li>
@@ -52,13 +50,13 @@
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Futbol</a>
+                        <a href="competencias.html">Futbol</a>
                     </li>
                     <li>
-                        <a href="#">Basketball</a>
+                        <a href="competencias.html">Basketball</a>
                     </li>
                     <li>
-                        <a href="#">Handball</a>
+                        <a href="competencias.html">Handball</a>
                     </li>
                 </ul>
             </li>
@@ -92,69 +90,77 @@
             </nav>
         </header>
 
-
-        <!-- Contenido de la pagina aca abajo -->
-        <div class="text-center">
-            <h1>Competencias</h1>
-            <h2>Deporte</h2>
-            <div class="d-flex justify-content-center">
-                <input type="search" class="form-control w-50" placeholder="Buscar competencia...">
-                <button type="button" class="btn btn-outline-dark ml-2"><i class="fa fa-search" aria-hidden="true"></i>
-                </button>
+        <div class="container-fluid w-100">
+            <!-- Contenido de la pagina aca abajo -->
+            <div class="text-center">
+                <h1>Competencias</h1>
+                <h2>Deporte</h2>
+                <div class="d-flex justify-content-center">
+                    <form action="" class="form-inline">
+                        <div class="col-10">
+                            <input type="search" class="form-control" placeholder="Buscar competencia...">
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-search"
+                                    aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
+            <div class="container">
+                <div class="table-responsive-lg mt-4">
+                    <table class="table table-hover table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>Ligas - Competiciones</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <a href="http://example.com">
+                                        <div style="height:100%;width:100%">
+                                            Prueba prueba prueba prueba prueba
+                                        </div>
+                                    </a></td>
+                                <td><button type="button" class="btn btn-outline-success float-right">Ir</button></td>
+                            </tr>
+                            <tr>
+                                <td> <a href="http://example.com">
+                                        <div style="height:100%;width:100%">
+                                            hello world
+                                        </div>
+                                    </a></td>
+                                <td><button type="button" class="btn btn-outline-success float-right">Ir</button></td>
+                            </tr>
+                            <tr>
+                                <td> <a href="http://example.com">
+                                        <div style="height:100%;width:100%">
+                                            hello world
+                                        </div>
+                                    </a></td>
+                                <td><button type="button" class="btn btn-outline-success float-right">Ir</button></td>
+                            </tr>
 
-        </div>
-        <div class="container">
-            <div class="table-responsive-lg mt-4">
-                <table class="table table-hover table-dark table-striped">
-                    <thead>
-                        <th>Ligas - Competiciones</th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="liga" colspan="2"> <a href="http://example.com">
-                                    <div style="height:100%;width:100%">
-                                        hello world
-                                    </div>
-                                </a></td>
-                            <td><button type="button" class="btn btn-outline-success float-right">Ir</button></td>
-                        </tr>
-                        <tr>
-                            <td class="liga" colspan="2"> <a href="http://example.com">
-                                <div style="height:100%;width:100%">
-                                    hello world
-                                </div>
-                            </a></td>
-                        <td><button type="button" class="btn btn-outline-success float-right">Ir</button></td>
-                        </tr>
-                        <tr>
-                            <td class="liga" colspan="2"> <a href="http://example.com">
-                                <div style="height:100%;width:100%">
-                                    hello world
-                                </div>
-                            </a></td>
-                        <td><button type="button" class="btn btn-outline-success float-right">Ir</button></td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Contenido de la pagina arriba de aca -->
             </div>
-            <!-- Contenido de la pagina arriba de aca -->
         </div>
     </div>
+        <div class="overlay"></div>
 
-    <div class="overlay"></div>
-
-    <!-- jQuery-->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <!-- Popper.JS -->
-    <script src="assets/js/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Script para el overlay -->
-    <script src="assets/js/overlay.js"></script>
+        <!-- jQuery-->
+        <script src="assets/js/jquery-3.6.0.min.js"></script>
+        <!-- Popper.JS -->
+        <script src="assets/js/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
+        <!-- Bootstrap JS -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- Script para el overlay -->
+        <script src="assets/js/overlay.js"></script>
 
 </body>
 
