@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>S.I.G.D - Pagina</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <a href="index.html" title="Ir al menu principal">
+                <img src="assets/img/logo-pagina.png" alt="" class="logo-image" />
+                <h3>S.I.G.D</h3>
+            </a>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <p>Bienvenido!</p>
+            </li>
+            <li class="active">
+                <a href="index.html">Menu Principal</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Competencias
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="competencias.html">Futbol</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html">Basketball</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html">Handball</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fin barra lateral -->
+    <!-- NavBar y Contenido  -->
+    <div id="content">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark mt-2">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-user"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="mt-2 btn btn-outline-dark float-right" href="login.html"><i
+                                        class="fa fa-user"></i> Iniciar sesion</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid w-100">
+            <!-- Contenido de la pagina aca abajo -->
+ <div class="text-center">
+                <h1>Copa Ejemplo</h1>
+            </div>
+                <div class="container my-3">
+                  <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 py-8 bg-transparent">
+                <div class="table-responsive-lg mt-4">
+                    <h2>Tabla de posiciones</h2>
+                    <table class="table table-hover table-dark table-striped">
+                            <tr> 
+                                <th><div class="equipos"><p>EQUIPOS</p></div></th>
+                                <th><div class="e-item"><p>PJ</p></div></th>
+                                <th><div class="e-item"><p>PG</p></div></th>
+                                <th><div class="e-item"><p>PE</p></div></th>
+                                <th><div class="e-item"><p>PP</p></div></th>
+                                <th><div class="e-item"><p>GF</p></div></th>
+                                <th><div class="e-item"><p>GC</p></div></th>
+                                <th><div class="e-dif"><p>DIF</p></div></th>
+                                <th><div class="e-ult-p"><p>ULT-P</p></div></th>
+                                <th><div class="e-pts"><p>PTS</p></div></th>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 1</p></div></td>
+                                <td><div class="item1"><p>4</p></div></td>
+                                <td><div class="item"><p>4</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>8</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="dif"><p>7</p></div></td>
+                                <td><div class="ult-p"><p>4-0-0</p></div></td>
+                                <td><div class="pts"><p>12</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 2</p></div></td>
+                                <td><div class="item1"><p>4</p></div></td>
+                                <td><div class="item"><p>3</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>6</p></div></td>
+                                <td><div class="item"><p>4</p></div></td>
+                                <td><div class="dif"><p>2</p></div></td>
+                                <td><div class="ult-p"><p>3-0-1</p></div></td>
+                                <td><div class="pts"><p>9</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 3</p></div></td>
+                                <td><div class="item1"><p>4</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>5</p></div></td>
+                                <td><div class="item"><p>3</p></div></td>
+                                <td><div class="dif"><p>2</p></div></td>
+                                <td><div class="ult-p"><p>2-1-1</p></div></td>
+                                <td><div class="pts"><p>7</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 4</p></div></td>
+                                <td><div class="item1"><p>4</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="item"><p>5</p></div></td>
+                                <td><div class="item"><p>3</p></div></td>
+                                <td><div class="dif"><p>2</p></div></td>
+                                <td><div class="ult-p"><p>2-0-2</p></div></td>
+                                <td><div class="pts"><p>7</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 5</p></div></td>
+                                <td><div class="item1"><p>4</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="item"><p>4</p></div></td>
+                                <td><div class="item"><p>4</p></div></td>
+                                <td><div class="dif"><p>0</p></div></td>
+                                <td><div class="ult-p"><p>1-1-2</p></div></td>
+                                <td><div class="pts"><p>4</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 5</p></div></td>
+                                <td><div class="item1"><p>3</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="dif"><p>0</p></div></td>
+                                <td><div class="ult-p"><p>1-1-1</p></div></td>
+                                <td><div class="pts"><p>4</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 7</p></div></td>
+                                <td><div class="item1"><p>4</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>3</p></div></td>
+                                <td><div class="item"><p>2</p></div></td>
+                                <td><div class="item"><p>7</p></div></td>
+                                <td><div class="dif"><p>-5</p></div></td>
+                                <td><div class="ult-p"><p>0-1-3</p></div></td>
+                                <td><div class="pts"><p>1</p></div></td>
+                            </tr>
+                            <tr>
+                                <td><div class="escudos"><img src="img/escudo.png" alt="escudo" width="30px"></div><div class="equipo"><p>Equipo 8</p></div></td>
+                                <td><div class="item1"><p>3</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>0</p></div></td>
+                                <td><div class="item"><p>3</p></div></td>
+                                <td><div class="item"><p>1</p></div></td>
+                                <td><div class="item"><p>8</p></div></td>
+                                <td><div class="dif"><p>-7</p></div></td>
+                                <td><div class="ult-p"><p>0-0-3</p></div></td>
+                                <td><div class="pts"><p>0</p></div></td>
+                            </tr>
+                    </table>
+                        <p class="pieTabla">PJ - partidos jugados | PG - partidos ganados | PE - partidos empatados | PP - partidos perdidos | GF - goles a favor<br>
+                         GC - goles en contra | DIF - diferencia de goles | ULT. P - resultados ultimos 5 partidos </p>
+                        </div>
+            </div>
+                </div>
+            <!-- Contenido de la pagina arriba de aca -->
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jQuery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="assets/js/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Script para el overlay -->
+    <script src="assets/js/overlay.js"></script>
+
+</body>
+
+</html>
