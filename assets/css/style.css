@@ -195,3 +195,47 @@ a.article:hover {
     right: 0;
 }
 
+.escudo{
+    margin: 0%;
+    padding: 0px;
+    min-width: 120px;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.ult-p{
+    min-width: 60px;
+}
+
+.equipos{
+    min-width: 110px;
+    
+}
+
+.equipo{
+    max-width: 110px;
+}
+
+.separadorTabla{
+    background-color: #fafafa;
+}
+
+.jugadores{
+    min-width: 170px;
+}
+
+.goles{
+    float: right;
+}
+
+.escudos{
+    float: left;
+}
+
+.gol{
+    margin: 0%;
+    padding: 0%;
+    min-width: 120px;
+}
