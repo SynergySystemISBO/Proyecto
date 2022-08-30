@@ -256,5 +256,33 @@ cursor: pointer;
 .card:hover{
    transform: scale(1.05);
 box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-color: rgb(0, 255, 166);
+color: #003c7c;
+}
+
+.contenedorEscudo{
+    display: flex;
+    justify-content: center;
+}
+
+.escudoEquipo{
+    width: 350px;
+    margin-top: -35px;
+}
+
+.col-sm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212529;
+    margin: 2px;
+    height: 45px;
+}
+.col-sm:hover{
+    transform: scale(1.015);
+    background-color: #2a2c2e;
+}
+
+.tituloPlantel{
+    display: flex;
+    justify-content: center;
 }

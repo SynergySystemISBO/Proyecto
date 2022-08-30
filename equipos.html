@@ -88,7 +88,8 @@
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
                                 <a class="mt-2 btn btn-outline-dark float-right" href="login.html"><i
-                                        class="fa fa-user"></i> Iniciar sesión</a>
+                                        class="fa fa-user"></i> Iniciar
+                                    sesion</a>
                             </li>
                         </ul>
                     </div>
@@ -99,71 +100,165 @@
         <div class="container-fluid w-100">
             <!-- Contenido de la pagina aca abajo -->
             <div class="text-center">
-                <h1>Competencias</h1>
-                <h2>Deporte</h2>
+                <h1>Equipos</h1>
                 <div class="d-flex justify-content-center">
                     <form action="" class="form-inline">
                         <div class="col-10">
-                            <input type="search" class="form-control" placeholder="Buscar competencia...">
+                            <input type="search" class="form-control" placeholder="Buscar equipo...">
                         </div>
                         <div class="col-2">
-                            <button type="button" class="btn btn-outline-dark"><i class="fa fa-search"
+                            <button type="button" class="btn btn-outline-dark" id="boton-buscar"><i class="fa fa-search"
                                     aria-hidden="true"></i>
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="container">
-                <div class="table-responsive-lg mt-4">
-                    <table class="table table-hover table-dark table-striped">
-                        <thead>
-                            <tr>
-                                <th>Ligas - Competiciones</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div>
-                                        Prueba prueba prueba prueba
-                                    </div>
-                                </td>
-                                <td>
-                                    <form method="get" action="liga.html"><button type="submit" class="btn btn-outline-success float-right">Ir</button>
-                                    </form>
-                                    </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        hello world
-                                    </div>
-                                </td>
-                                <td>
-                                    <form method="get" action="liga.html"><button type="submit" class="btn btn-outline-success float-right">Ir</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        hello world
-                                    </div>
-                                </td>
-                                <td>
-                                <form method="get" action="liga.html"><button type="submit" class="btn btn-outline-success float-right">Ir</button>
-                                </form>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+            <div class="row" id="info-equipo">
+
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-5 bg-transparent">
+                    <div class="contenedorEscudo">
+                        <img src="assets/img/escudo.png" alt="escudo" class="escudoEquipo">
+                    </div>
                 </div>
-                <!-- Contenido de la pagina arriba de aca -->
+
+
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-5 bg-transparent">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark table-striped">
+                            <tr>
+                                <th>
+                                    <p>NOMBRE EQUIPO</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Deporte</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Liga: Nombre Liga</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Cant. Jugadores: xx</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>DT: Nombre DT</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
+
+
+            <div id="plantel-equipo">
+                <h1 class="tituloPlantel">Plantel</h1>
+                <div class="container">
+                    <div class="row">
+
+                            <div class="col-sm">
+                                <a href="jugadores.html">
+                                    <p>JUGADOR EJEMPLO</p>
+                                </a>
+                            </div>
+
+
+                            <div class="col-sm">
+                                <a href="jugadores.html">
+                                    <p>JUGADOR EJEMPLO</p>
+                                </a>
+                            </div>
+
+                            <div class="col-sm">
+                                <a href="jugadores.html">
+                                    <p>JUGADOR EJEMPLO</p>
+                                </a>
+                            </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+                        <div class="col-sm">
+                            <a href="jugadores.html">
+                                <p>JUGADOR EJEMPLO</p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Contenido de la pagina arriba de aca -->
         </div>
     </div>
+
     <div class="overlay"></div>
 
     <!-- jQuery-->
@@ -175,6 +270,8 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- Script para el overlay -->
     <script src="assets/js/overlay.js"></script>
+    <!-- Script para el buscador -->
+    <script src="assets/js/buscar.js"></script>
 
 </body>
 
