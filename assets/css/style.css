@@ -259,12 +259,16 @@ box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 color: #003c7c;
 }
 
-.contenedorEscudo{
+.centrar{
     display: flex;
     justify-content: center;
 }
 
-.escudoEquipo{
+.img-mediana{
+    width: 350px;
+}
+
+.img-mediana1{
     width: 350px;
     margin-top: -35px;
 }
@@ -285,4 +289,9 @@ color: #003c7c;
 .tituloPlantel{
     display: flex;
     justify-content: center;
+}
+
+.btn-login{
+    background-color: #003c7c;
+    color: #fafafa;
 }
