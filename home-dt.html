@@ -102,15 +102,20 @@
         <div class="container-fluid w-100">
             <!-- Contenido de la pagina aca abajo -->
             <div class="jumbotron">   
-                    <h1 class="titulo-jumbotron">Bienvenid@ NOMBRE ARBITRO!</h1>
+                    <h1 class="titulo-jumbotron">Bienvenid@ NOMBRE DT!</h1>
+                    <hr>
+                    <h4 class="titulo-jumbotron">NOMBRE EQUIPO</h4>
             </div>
+            
             <div class="container">
                 <div class="table-responsive">
-                    <table class="table table-hover table-dark table-striped">
+                    <table class="table table-dark table-hover table-striped">
                         <tr>
-                            <th>
-                                <p>Deporte</p>
+                            <th colspan="4">
+                                <p class="text-center">SIGUIENTE PARTIDO</p>
                             </th>
+                        </tr>
+                        <tr>
                             <th>
                                 <p>Fecha</p>
                             </th>
@@ -118,126 +123,110 @@
                                 <p>Hora</p>
                             </th>
                             <th>
-                                <p>Partido</p>
+                                <p>Rival</p>
                             </th>
                             <th>
                                 <p>Cancha</p>
                             </th>
-                            <th>
-                                <p class="float-right">Validar</p>
-                            </th>
+                            
                         </tr>
-
                         <tr>
                             <td>
-                                <p>Fútbol</p>
-                            </td>
-                            <td>
-                                <p>29/09/2022</p>
-                            </td>
-                            <td>
-                                <p>13:30</p>
-                            </td>
-                            <td>
-                                <div class="equipos-partido">
-                                    <p>Equipo 1 vs Equipo 5</p>
-                                </div>      
-                            </td>
-                            <td>
-                                <div class="cancha-partido">
-                                    <p>Complejo Northfield</p>
-                                </div> 
-                            </td>
-                            <td>
-                                <form method="get" action="validar-partido.html">
-                                    <button type="submit" class="btn btn-outline-success float-right">Ir</button>
-                                </form>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <p>Fútbol</p>
-                            </td>
-                            <td>
-                                <p>30/09/2022</p>
+                                <p>03/09/2022</p>
                             </td>
                             <td>
                                 <p>15:30</p>
                             </td>
                             <td>
-                                <div class="equipos-partido">
-                                    <p>Equipo 2 vs Equipo 3</p>
-                                </div>      
+                                <p class="equipos-partido">EQUIPO RIVAL</p>
                             </td>
                             <td>
-                                <div class="cancha-partido">
-                                    <p>Gran Parque Central</p>
-                                </div> 
-                            </td>
-                            <td>
-                                <form method="get" action="validar-partido.html">
-                                    <button type="submit" class="btn btn-outline-success float-right">Ir</button>
-                                </form>
+                                <p class="cancha-partido">Complejo Deportivo Prado</p>
                             </td>
                         </tr>
-
                         <tr>
-                            <td>
-                                <p>Basketball</p>
-                            </td>
-                            <td>
-                                <p>01/10/2022</p>
-                            </td>
-                            <td>
-                                <p>13:30</p>
-                            </td>
-                            <td>
-                                <div class="equipos-partido">
-                                    <p>Equipo 3 vs Equipo 5</p>
-                                </div>      
-                            </td>
-                            <td>
-                                <div class="cancha-partido">
-                                    <p>Los Cespedes</p>
-                                </div> 
-                            </td>
-                            <td>
-                                <form method="get" action="validar-partido.html">
-                                    <button type="submit" class="btn btn-outline-success float-right">Ir</button>
-                                </form>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <p>Fútbol</p>
-                            </td>
-                            <td>
-                                <p>03/10/2022</p>
-                            </td>
-                            <td>
-                                <p>10:30</p>
-                            </td>
-                            <td>
-                                <div class="equipos-partido">
-                                    <p>Equipo 1 vs Equipo 2</p>
-                                </div>      
-                            </td>
-                            <td>
-                                <div class="cancha-partido">
-                                    <p>Complejo Racing Club</p>
-                                </div> 
-                            </td>
-                            <td>
-                                <form method="get" action="validar-partido.html">
-                                    <button type="submit" class="btn btn-outline-success float-right">Ir</button>
+                            <td colspan="4">
+                                <form method="get" action="ingresar-jugadores.html">
+                                    <div class="centrar-boton">
+                                        <button type="submit" class="btn btn-outline-success">SELECCIONAR PLANTEL</button>
+                                    </div>  
                                 </form>
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
+
+            <div class="fixture-equipo container">
+                <h2 class="text-center">FIXTURE</h2>
+                        <div class="table-responsive mt-4">
+                            <table class="table table-hover table-dark table-striped">
+                                <tr>
+                                    <th>
+                                        <p class="text-center">FECHA 1</p>
+                                    </th>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                    <td>
+                                        <p>EQUIPO 1 vs EQUIPO 2</p>
+                                    </td>
+                                </tr>
+                                
+                                <tr><th class="separadorTabla"></th></tr>
+                                <tr>
+                                    <th>
+                                        <p class="text-center">FECHA 2</p>
+                                    </th>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                    <td>
+                                        <p>EQUIPO 1 vs EQUIPO 3</p>
+                                    </td>
+                                </tr>
+                                
+                                <tr><th class="separadorTabla"></th></tr>
+                                <tr>
+                                    <th>
+                                        <p class="text-center">FECHA 3</p>
+                                    </th>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                    <td>
+                                        <p>EQUIPO 1 vs EQUIPO 4</p>
+                                    </td>
+                                </tr>
+                                
+                                <tr><th class="separadorTabla"></th></tr>
+                                <tr>
+                                    <th>
+                                        <p class="text-center">FECHA 4</p>
+                                    </th>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                    <td>
+                                        <p>FECHA LIBRE: EQUIPO 1</p>
+                                    </td>
+                                </tr>
+                                <tr><th class="separadorTabla"></th></tr>
+                                <tr>
+                                    <th>
+                                        <p class="text-center">FECHA 5</p>
+                                    </th>
+                                </tr>
+                                <tr></tr>
+                                <tr>
+                                    <td>
+                                        <p>EQUIPO 5 vs EQUIPO 1</p>
+                                    </td>
+                                </tr>
+                            
+                            </table>
+                        </div>
+                    </div>
 
             <!-- Contenido de la pagina arriba de aca -->
         </div>
