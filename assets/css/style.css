@@ -295,3 +295,23 @@ color: #003c7c;
     background-color: #003c7c;
     color: #fafafa;
 }
+
+.titulo-jumbotron{
+    margin: 20px;
+}
+
+.equipos-partido{
+    min-width: 200px;
+}
+
+.cancha-partido{
+    min-width: 250px;
+}
+
+.jugador-partido{
+    min-width: 250px;
+}
+
+.formulario-partido{
+    padding: 0px 0px;
+}
