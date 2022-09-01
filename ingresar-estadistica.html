@@ -9,9 +9,9 @@
     <title>S.I.G.D - Pagina</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!-- CSS-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -41,7 +41,7 @@
             <li>
                 <p>Bienvenido!</p>
             </li>
-            <li class="active">
+            <li>
                 <a href="index.html">Menú Principal</a>
             </li>
             <li>
@@ -66,6 +66,9 @@
             <li>
                 <a href="equipos.html">Equipos</a>
             </li>
+            <li  class="active">
+                <a href="home-estadistico.html">ESTADISTICO</a>
+            </li>
         </ul>
     </nav>
     <!-- Fin barra lateral -->
@@ -87,8 +90,8 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="mt-2 btn btn-outline-dark float-right" href="login.html"><i
-                                        class="fa fa-user"></i> Iniciar sesión</a>
+                                <a class="mt-2 btn btn-outline-dark float-right" href="index.html"><i
+                                        class="fa fa-user"></i> Cerrar sesión</a>
                             </li>
                         </ul>
                     </div>
@@ -98,13 +101,89 @@
 
         <div class="container-fluid w-100">
             <!-- Contenido de la pagina aca abajo -->
+            <div class="jumbotron">
+                    <h1 class="titulo-jumbotron">EQUIPO 1 vs EQUIPO 2</h1>
+                    <hr class="my-4">
+                    <h3 class="titulo-jumbotron">LIGA UTU</h3>
+            </div>
+            <div class="formulario-partido">
+                <div class="table-responsive">
+                    <table class="table table-hover table-dark table-striped">
+                        <tr>
+                            <th colspan="10"><p class="text-center">FORMULARIO PARTIDO</p></th>
+                        </tr>
+                        <tr>
+                            <th colspan="5"><p class="text-center">EQUIPO 1</p></th>
+                            <th colspan="5"><p class="text-center">EQUIPO 2</p></th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><p class="text-center">min</p></td>
+                            <td><p>Jugador</p></td>
+                            <td><p class="text-center">num</p></td>
+                            <td></td>
+
+
+                            <td></td>
+                            <td><p class="text-center">min</p></td>
+                            <td><p>Jugador</p></td>
+                            <td><p class="text-center">num</p></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5"><p>GOL</p></td>
+                            <td colspan="5"><p>GOL</p></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5"><p>T.A</p></td>
+                            <td colspan="5"><p>T.A</p></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5"><p>T.R</p></td>
+                            <td colspan="5"><p>T.R</p></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="10"><p class="text-center">SUSTITUCIONES</p></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5"><p>Entra</p></td>
+                            <td colspan="5"><p>Entra</p></td>
+                    
+                        </tr>
+
+                        <tr>
+                            <td colspan="5"><p>Sale</p></td>
+                            <td colspan="5"><p>Sale</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <button type="" class="btn btn-outline-success">AGREGAR DATO</button>
+                            </td>
+
+                            <td colspan="5">
+                                <button type="" class="btn btn-outline-success">AGREGAR DATO</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="10">
+                                <div class="centrar-boton">
+                                    <button type="submit" class="btn btn-outline-success">ENVIAR FORMULARIO</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
             <!-- Contenido de la pagina arriba de aca -->
         </div>
     </div>
-
     <div class="overlay"></div>
-
     <!-- jQuery-->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <!-- Popper.JS -->

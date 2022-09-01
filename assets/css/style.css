@@ -353,3 +353,7 @@ input[type=checkbox] {
 .jumbotron p {
     color: black;
 }
+
+.btn-enviar-form{
+    width: 100%;
+}
