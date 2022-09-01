@@ -88,9 +88,9 @@ a:focus {
     transition: all 0.3s;
 }
 
-#dismiss:hover {
-    background: #fff;
-    color: #151515;
+#dismiss:hover {  
+    color: rgb(148,187,233);
+    color: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(85,143,212,0.923406862745098) 100%);
 }
 
 .overlay {
@@ -130,8 +130,8 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #151515;
-    background: #fff;
+    color: rgba(148, 188, 233, 0.842);
+    color: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(85,143,212,0.923406862745098) 100%);
 }
 
 #sidebar ul li.active>a,
@@ -256,7 +256,7 @@ cursor: pointer;
 .card:hover{
    transform: scale(1.05);
 box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-color: #003c7c;
+color: #3673b4;
 }
 
 .centrar{
@@ -292,7 +292,8 @@ color: #003c7c;
 }
 
 .btn-login{
-    background-color: #003c7c;
+    background-color: rgb(148,187,233);
+    background-color: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(85,143,212,0.923406862745098) 100%);
     color: #fafafa;
 }
 
@@ -343,3 +344,12 @@ input[type=checkbox] {
   .titulo-tabla{
     font-weight: 600;
   }
+
+.jumbotron {
+    background: rgb(148,187,233);
+    background: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(85,143,212,0.923406862745098) 100%);
+}
+
+.jumbotron p {
+    color: black;
+}
