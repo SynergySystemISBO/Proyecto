@@ -362,3 +362,63 @@ input[type=checkbox] {
 #resultado-busqueda{
     display: none;
 }
+
+#usuarios{
+    display: none;
+}
+
+#deportistas{
+    display: none;
+}
+
+#equipos{
+    display: none;
+}
+
+#competencias{
+    display: none;
+}
+
+#partidos{
+    display: none;
+}
+
+#deportes{
+    display: none;
+}
+
+#r-usuarios{
+    display: none;
+}
+
+#a-usuarios{
+    display: none;
+}
+
+#e-usuarios{
+    display: none;
+}
+
+#c-deportistas{
+    display: none;
+}
+
+#a-deportistas{
+    display:none;
+}
+
+#e-deportistas{
+    display: none;
+}
+
+#c-equipos{
+    display: none;
+}
+
+#a-equipos{
+    display: none;
+}
+
+#e-equipos{
+    display: none;
+}

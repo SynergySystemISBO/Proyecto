@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>S.I.G.D - Pagina</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <a href="index.html" title="Ir al menu principal">
+                <img src="assets/img/logo-pagina.png" alt="" class="logo-image" />
+                <h3>S.I.G.D</h3>
+            </a>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <p>Bienvenido!</p>
+            </li>
+            <li>
+                <a href="index.html">Menú Principal</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Competencias
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="competencias.html">Fútbol</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html">Basketball</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html">Handball</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="jugadores.html">Jugadores</a>
+            </li>
+            <li>
+                <a href="equipos.html">Equipos</a>
+            </li>
+            <li class="active">
+                <a href="home-admin.html">ADMIN</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fin barra lateral -->
+    <!-- NavBar y Contenido  -->
+    <div id="content">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark mt-2">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-user"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="mt-2 btn btn-outline-dark float-right" href="index.html"><i
+                                        class="fa fa-user"></i> Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid w-100">
+            <!-- Contenido de la pagina aca abajo -->
+            <div class="jumbotron">
+                <h1 class="titulo-jumbotron">Bienvenid@ NOMBRE ADMIN</h1>
+            </div>
+
+            <div class="text-center">
+                <div class=" btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="btn-usuario"> Usuarios
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="btn-deportistas"> Deportistas
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="btn-equipo"> Equipos
+                    </label>
+                    <br>
+                    <label class="btn btn-secondary mt-2">
+                        <input type="radio" name="options" id="btn-competencia"> Competencias
+                    </label>
+                    <label class="btn btn-secondary mt-2">
+                        <input type="radio" name="options" id="btn-partido"> Partidos
+                    </label>
+                    <label class="btn btn-secondary mt-2">
+                        <input type="radio" name="options" id="btn-deporte"> Deportes
+                    </label>
+                </div>
+            </div>
+
+            <!-- Usuraios -->
+
+            <div class="container mt-4" id="usuarios">
+                <div class="text-center">
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-usuario1"> Registrar Usuarios
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-usuario2"> Actualizar Usuarios
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-usuario3"> Eliminar Usuarios
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Deportistas -->
+
+            <div class="container mt-4" id="deportistas">
+                <div class="text-center">
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-deportistas1"> Crear Deportista
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-deportistas2"> Actualizar Deportista
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-deportistas3"> Eliminar Deportista
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Equipos -->
+
+            <div class="container mt-4" id="equipos">
+                <div class="text-center">
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-equipo1"> Crear Equipo
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-equipo2"> Actualizar Equipo
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-equipo3"> Eliminar Equipo
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Competencias -->
+
+            <div class="container mt-4" id="competencias">
+                <div class="text-center">
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-competencia1"> Crear Competencia
+                        </label>
+                    </div>
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-competencia2"> Actualizar Competencia
+                        </label>
+                    </div>
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-competencia3"> Eliminar Competencia
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Partidos -->
+
+            <div class="container mt-4" id="partidos">
+                <div class="text-center">
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-partido1"> Crear Partido
+                        </label>
+                    </div>
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-partido2"> Actualizar Partido
+                        </label>
+                    </div>
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-partido3"> Eliminar Partido
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deportes -->
+
+            <div class="container mt-4" id="deportes">
+                <div class="text-center">
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-deporte1"> Crear Deporte
+                        </label>
+                    </div>
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-deporte2"> Actualizar Deporte
+                        </label>
+                    </div>
+                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="btn-deporte3"> Eliminar Deporte
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registrar Usuarios -->
+            <div class="container mt-3" id="r-usuarios">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">REGISTRAR USUARIOS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="ci" class="form-control" placeholder="CI">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control" placeholder="Contraseña">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="mail" id="password" class="form-control" placeholder="Mail">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="posicion" id="posicion" class="form-control">
+                                <option value="" selected disabled>ROL</option>
+                                <option value="dt">DT</option>
+                                <option value="arbitro">ARBITRO</option>
+                                <option value="estadistico">ESTADISTICO</option>
+                                <option value="scouting">SCOUTING</option>
+                                <option value="admin">ADMIN</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACEPTAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Actualizar Usuarios -->
+            <div class="container mt-3" id="a-usuarios">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">ACTUALIZAR USUARIOS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="ci" class="form-control" placeholder="INGRESE CI">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" value="Pedro">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido"
+                                value="Rodriguez">
+                        </div>
+
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control" placeholder="Contraseña"
+                                value="hola123">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="mail" id="password" class="form-control" placeholder="Mail"
+                                value="pedror@gmail.com">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="posicion" id="posicion" class="form-control">
+                                <option value="" disabled>ROL</option>
+                                <option value="dt" selected>DT</option>
+                                <option value="arbitro">ARBITRO</option>
+                                <option value="estadistico">ESTADISTICO</option>
+                                <option value="scouting">SCOUTING</option>
+                                <option value="admin">ADMIN</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACTUALIZAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Eliminar Usuarios -->
+            <div class="container mt-3" id="e-usuarios">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">ELIMINAR USUARIOS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="ci" class="form-control" placeholder="INGRESE CI">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" value="Pedro"
+                                disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido"
+                                value="Rodriguez" disabled>
+                        </div>
+
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control" placeholder="Contraseña"
+                                value="hola123" disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="mail" id="password" class="form-control" placeholder="Mail"
+                                value="pedror@gmail.com" disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="posicion" id="posicion" class="form-control">
+                                <option value="" disabled>ROL</option>
+                                <option value="dt" selected disabled>DT</option>
+                                <option value="arbitro" disabled>ARBITRO</option>
+                                <option value="estadistico" disabled>ESTADISTICO</option>
+                                <option value="scouting" disabled>SCOUTING</option>
+                                <option value="admin" disabled>ADMIN</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ELIMINAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- Crear deportistas-->
+
+            <div class="container mt-3" id="c-deportistas">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">CREAR DEPORTISTAS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="ci" class="form-control" placeholder="CI" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="date" id="fecha-nac" class="form-control" placeholder="Fecha de Nacimiento"
+                                required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="altura" class="form-control" placeholder="Altura">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="peso" class="form-control" placeholder="Peso">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" id="deporte" class="form-control">
+                                <option value="" selected disabled>Deporte</option>
+                                <option value="futbol">Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" id="equipo" class="form-control">
+                                <option value="" selected disabled>Equipo</option>
+                                <option value="eq1">Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="posicion" id="posicion" class="form-control">
+                                <option value="" selected disabled>Posición</option>
+                                <option value="equipo4">GOLERO</option>
+                                <option value="equipo5">DEFENSA</option>
+                                <option value="equipo6">MEDIOCAMPISTA</option>
+                                <option value="equipo6">ATACANTE</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACEPTAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Actualizar deportistas-->
+
+            <div class="container mt-3" id="a-deportistas">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">ACTUALIZAR DEPORTISTAS</h1>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <input type="number" id="ci" class="form-control" placeholder="CI" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required
+                                value="Pedro">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido" required
+                                value="Pedrosa">
+                        </div>
+
+
+                        <div class="form-outline mb-4">
+                            <input type="date" id="fecha-nac" class="form-control" placeholder="Fecha de Nacimiento"
+                                required value="1999-09-29">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="altura" class="form-control" placeholder="Altura" value="189">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="peso" class="form-control" placeholder="Peso" value="81">
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" id="deporte" class="form-control">
+                                <option value="" disabled>Deporte</option>
+                                <option value="futbol" selected>Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" id="equipo" class="form-control">
+                                <option value="" disabled>Equipo</option>
+                                <option value="eq1" selected>Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="posicion" id="posicion" class="form-control">
+                                <option value="" disabled>Posición</option>
+                                <option value="equipo4">GOLERO</option>
+                                <option value="equipo5" selected>DEFENSA</option>
+                                <option value="equipo6">MEDIOCAMPISTA</option>
+                                <option value="equipo6">ATACANTE</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACTUALIZAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Eliminar deportistas-->
+            <div class="container mt-3" id="e-deportistas">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">ELIMINAR DEPORTISTAS</h1>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <input type="number" id="ci" class="form-control" placeholder="ingrese CI" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required
+                                value="Pedro" disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido" required
+                                value="Pedrosa" disabled>
+                        </div>
+
+
+                        <div class="form-outline mb-4">
+                            <input type="date" id="fecha-nac" class="form-control" placeholder="Fecha de Nacimiento"
+                                required value="1999-09-29" disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="altura" class="form-control" placeholder="Altura" value="189"
+                                disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" id="peso" class="form-control" placeholder="Peso" value="81" disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" id="deporte" class="form-control" disabled>
+                                <option value="" disabled>Deporte</option>
+                                <option value="futbol" selected>Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" id="equipo" class="form-control" disabled>
+                                <option value="" disabled>Equipo</option>
+                                <option value="eq1" selected>Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="posicion" id="posicion" class="form-control" disabled>
+                                <option value="" disabled>Posición</option>
+                                <option value="equipo4" disabled>GOLERO</option>
+                                <option value="equipo5" disabled selected>DEFENSA</option>
+                                <option value="equipo6" disabled>MEDIOCAMPISTA</option>
+                                <option value="equipo6" disabled>ATACANTE</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ELIMINAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Crear Equipos-->
+
+            <div class="container mt-3" id="c-equipos">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">CREAR EQUIPOS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" id="deporte" class="form-control">
+                                <option value="" selected disabled>Deporte</option>
+                                <option value="futbol">Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="liga" id="liga" class="form-control">
+                                <option value="" selected disabled>Liga</option>
+                                <option value="l1">Liga 1</option>
+                                <option value="l2">Liga 2</option>
+                                <option value="l3">Liga 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="dt" id="dt" class="form-control">
+                                <option value="" selected disabled>DT</option>
+                                <option value="dt1">NOMBRE DT</option>
+                                <option value="dt2">NOMBRE DT</option>
+                                <option value="dt3">NOMBRE DT</option>
+                                <option value="dt4">NOMBRE DT</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACEPTAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Actualizar Equipos-->
+
+            <div class="container mt-3" id="a-equipos">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">ACTUALIZAR EQUIPOS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Ingrese Nombre" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" id="deporte" class="form-control">
+                                <option value=""  disabled>Deporte</option>
+                                <option value="futbol" selected>Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="liga" id="liga" class="form-control">
+                                <option value=""  disabled>Liga</option>
+                                <option value="l1">Liga 1</option>
+                                <option value="l2" selected>Liga 2</option>
+                                <option value="l3">Liga 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="dt" id="dt" class="form-control">
+                                <option value="" selected disabled>DT</option>
+                                <option value="dt1">NOMBRE DT</option>
+                                <option value="dt2">NOMBRE DT</option>
+                                <option value="dt3">NOMBRE DT</option>
+                                <option value="dt4" selected>NOMBRE DT</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACTUALIZAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Eliminar Equipos-->
+
+            <div class="container mt-3" id="e-equipos">
+                <div class="card-body p-md-5 mx-md-4">
+                    <h1 class="text-center">ELIMINAR EQUIPOS</h1>
+                    <form>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Ingrese Nombre" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" id="deporte" class="form-control" disabled>
+                                <option value=""  >Deporte</option>
+                                <option value="futbol" selected>Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="liga" id="liga" class="form-control" disabled>
+                                <option value=""  disabled>Liga</option>
+                                <option value="l1">Liga 1</option>
+                                <option value="l2" selected>Liga 2</option>
+                                <option value="l3">Liga 3</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="dt" id="dt" class="form-control" disabled>
+                                <option value="" selected disabled>DT</option>
+                                <option value="dt1">NOMBRE DT</option>
+                                <option value="dt2">NOMBRE DT</option>
+                                <option value="dt3">NOMBRE DT</option>
+                                <option value="dt4" selected>NOMBRE DT</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ELIMINAR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contenido de la pagina arriba de aca -->
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jQuery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="assets/js/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Script para el overlay -->
+    <script src="assets/js/overlay.js"></script>
+    <!-- Script para los btns -->
+    <script src="assets/js/botonesAdmin.js"></script>
+
+</body>
+
+</html>
