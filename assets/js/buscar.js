@@ -16,3 +16,7 @@ $("#boton-buscar").click(function(){
         $('#info-jugador').show();
         $('#estadisticas').show();
 });
+
+$("#boton-buscar").click(function(){
+    $('#resultado-busqueda').show();
+});
