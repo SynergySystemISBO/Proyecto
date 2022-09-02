@@ -422,3 +422,39 @@ input[type=checkbox] {
 #e-equipos{
     display: none;
 }
+
+#c-competencias{
+    display: none;
+}
+
+#a-competencias{
+    display: none;
+}
+
+#e-competencias{
+    display: none;
+}
+
+#c-partidos{
+    display: none;
+}
+
+#a-partidos{
+    display: none;
+}
+
+#e-partidos{
+    display: none;
+}
+
+#c-deporte{
+    display: none;
+}
+
+#a-deporte{
+    display: none;
+}
+
+#e-deporte{
+    display: none;
+}
