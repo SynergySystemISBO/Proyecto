@@ -206,11 +206,7 @@
                             <input type="radio" name="options" id="btn-competencia1"> Crear Competencia
                         </label>
                     </div>
-                    <div class=" btn-group-toggle mb-3" data-toggle="buttons">
-                        <label class="btn btn-secondary">
-                            <input type="radio" name="options" id="btn-competencia2"> Actualizar Competencia
-                        </label>
-                    </div>
+
                     <div class=" btn-group-toggle mb-3" data-toggle="buttons">
                         <label class="btn btn-secondary">
                             <input type="radio" name="options" id="btn-competencia3"> Eliminar Competencia
@@ -771,14 +767,26 @@
             <div class="container mt-3" id="c-competencias">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">CREAR COMPETENCIAS</h1>
-                </div>
-            </div>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <select name="deporte" class="form-control">
+                                <option value="" selected>Deporte</option>
+                                <option value="futbol" >Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
 
-            <!-- Actualizar competencias -->
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
 
-            <div class="container mt-3" id="a-competencias">
-                <div class="card-body p-md-5 mx-md-4">
-                    <h1 class="text-center">ACTUALIZAR COMPETENCIAS</h1>
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                CREAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -787,6 +795,27 @@
             <div class="container mt-3" id="e-competencias">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">ELIMINAR COMPETENCIAS</h1>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control" placeholder="Ingrese Nombre" required>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="deporte" class="form-control" disabled>
+                                <option value="" >Deporte</option>
+                                <option value="futbol">Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball" selected>Handball</option>
+                            </select>
+                        </div>
+
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ELIMINAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -795,6 +824,112 @@
             <div class="container mt-3" id="c-partidos">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">CREAR PARTIDOS</h1>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <select name="deporte" class="form-control" >
+                                <option value="" selected>Deporte</option>
+                                <option value="futbol">Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="liga" class="form-control">
+                                <option value="" >Liga</option>
+                                <option value="l1">Liga 1</option>
+                                <option value="l2">Liga 2</option>
+                                <option value="l3">Liga 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="fecha" class="form-control">
+                                <option value="" disabled selected>FECHA</option>
+                                <option value="f1">FECHA 1</option>
+                                <option value="f2">FECHA 2</option>
+                                <option value="f3">FECHA 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" class="form-control">
+                                <option value="" disabled selected>Equipo Local</option>
+                                <option value="eq1">Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" class="form-control">
+                                <option value="" disabled selected>Equipo Visitante</option>
+                                <option value="eq1" >Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="cancha" class="form-control">
+                                <option value="" disabled selected>CANCHA</option>
+                                <option value="c1">CANCHA 1</option>
+                                <option value="c2">CANCHA 2</option>
+                                <option value="c3">CANCHA 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="arbiro" class="form-control">
+                                <option value="" disabled selected>ARBITRO</option>
+                                <option value="c1">ARBITRO 1</option>
+                                <option value="c2">ARBITRO 2</option>
+                                <option value="c3">ARBITRO 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="asistente1" class="form-control">
+                                <option value="" disabled selected>PRIMER ASISTENTE</option>
+                                <option value="c1">ASISTENTE 1</option>
+                                <option value="c2">ASISTENTE 2</option>
+                                <option value="c3">ASISTENTE 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="asistente2" class="form-control">
+                                <option value="" disabled selected>SEGUNDO ASISTENTE</option>
+                                <option value="c1">ASISTENTE 1</option>
+                                <option value="c2">ASISTENTE 2</option>
+                                <option value="c3">ASISTENTE 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="hora" class="form-control">
+                                <option value="" disabled selected>HORA</option>
+                                <option value="c1">13:30</option>
+                                <option value="c2">15:30</option>
+                                <option value="c3">17:30</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                CREAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -803,6 +938,114 @@
             <div class="container mt-3" id="a-partidos">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">ACTUALIZAR PARTIDOS</h1>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <select name="deporte" class="form-control" >
+                                <option value="" selected>Deporte</option>
+                                <option value="futbol">Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="liga" class="form-control">
+                                <option value="" >Liga</option>
+                                <option value="l1">Liga 1</option>
+                                <option value="l2">Liga 2</option>
+                                <option value="l3">Liga 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="fecha" class="form-control">
+                                <option value="" disabled selected>FECHA</option>
+                                <option value="f1">FECHA 1</option>
+                                <option value="f2">FECHA 2</option>
+                                <option value="f3">FECHA 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" class="form-control">
+                                <option value="" disabled selected>Equipo Local</option>
+                                <option value="eq1">Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" class="form-control">
+                                <option value="" disabled selected>Equipo Visitante</option>
+                                <option value="eq1" >Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-outline mb-4">
+                            <select name="cancha" class="form-control">
+                                <option value="" disabled >CANCHA</option>
+                                <option value="c1" selected>CANCHA 1</option>
+                                <option value="c2">CANCHA 2</option>
+                                <option value="c3">CANCHA 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="arbiro" class="form-control">
+                                <option value="" disabled >ARBITRO</option>
+                                <option value="c1" selected>ARBITRO 1</option>
+                                <option value="c2" >ARBITRO 2</option>
+                                <option value="c3">ARBITRO 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="asistente1" class="form-control">
+                                <option value="" disabled >PRIMER ASISTENTE</option>
+                                <option value="c1">ASISTENTE 1</option>
+                                <option value="c2">ASISTENTE 2</option>
+                                <option value="c3" selected>ASISTENTE 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="asistente2" class="form-control">
+                                <option value="" disabled >SEGUNDO ASISTENTE</option>
+                                <option value="c1" selected>ASISTENTE 1</option>
+                                <option value="c2">ASISTENTE 2</option>
+                                <option value="c3">ASISTENTE 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="hora" class="form-control">
+                                <option value="" disabled >HORA</option>
+                                <option value="c1">13:30</option>
+                                <option value="c2" selected>15:30</option>
+                                <option value="c3">17:30</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ACTUALIZAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -811,6 +1054,114 @@
             <div class="container mt-3" id="e-partidos">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">ELIMINAR PARTIDOS</h1>
+                    <form>
+                        <div class="form-outline mb-4">
+                            <select name="deporte" class="form-control" >
+                                <option value="" selected>Deporte</option>
+                                <option value="futbol">Fútbol</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="handball">Handball</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="liga" class="form-control">
+                                <option value="" >Liga</option>
+                                <option value="l1">Liga 1</option>
+                                <option value="l2">Liga 2</option>
+                                <option value="l3">Liga 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="fecha" class="form-control">
+                                <option value="" disabled selected>FECHA</option>
+                                <option value="f1">FECHA 1</option>
+                                <option value="f2">FECHA 2</option>
+                                <option value="f3">FECHA 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" class="form-control">
+                                <option value="" disabled selected>Equipo Local</option>
+                                <option value="eq1">Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="equipo" class="form-control">
+                                <option value="" disabled selected>Equipo Visitante</option>
+                                <option value="eq1" >Equipo 1</option>
+                                <option value="eq2">Equipo 2</option>
+                                <option value="eq3">Equipo 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-outline mb-4">
+                            <select name="cancha" class="form-control" disabled>
+                                <option value="" disabled >CANCHA</option>
+                                <option value="c1" selected>CANCHA 1</option>
+                                <option value="c2">CANCHA 2</option>
+                                <option value="c3">CANCHA 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="arbiro" class="form-control" disabled>
+                                <option value="" disabled >ARBITRO</option>
+                                <option value="c1" selected>ARBITRO 1</option>
+                                <option value="c2" >ARBITRO 2</option>
+                                <option value="c3">ARBITRO 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="asistente1" class="form-control" disabled>
+                                <option value="" disabled >PRIMER ASISTENTE</option>
+                                <option value="c1">ASISTENTE 1</option>
+                                <option value="c2">ASISTENTE 2</option>
+                                <option value="c3" selected>ASISTENTE 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="asistente2" class="form-control" disabled>
+                                <option value="" disabled >SEGUNDO ASISTENTE</option>
+                                <option value="c1" selected>ASISTENTE 1</option>
+                                <option value="c2">ASISTENTE 2</option>
+                                <option value="c3">ASISTENTE 3</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <select name="hora" class="form-control" disabled>
+                                <option value="" disabled >HORA</option>
+                                <option value="c1">13:30</option>
+                                <option value="c2" selected>15:30</option>
+                                <option value="c3">17:30</option>
+                                <option value="c4" disabled> ...</option>
+                            </select>
+                        </div>
+
+                        <div class="text-center pt-1 mb-5 pb-1 mt-4">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                ELIMINAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -819,6 +1170,7 @@
             <div class="container mt-3" id="c-deporte">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">CREAR DEPORTES</h1>
+                    <h5 class="text-center mt-4">PROXIMAMENTE</h5>
                 </div>
             </div>
 
@@ -827,6 +1179,7 @@
             <div class="container mt-3" id="a-deporte">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">ACTUALIZAR DEPORTES</h1>
+                    <h5 class="text-center mt-4">PROXIMAMENTE</h5>
                 </div>
             </div>
 
@@ -835,6 +1188,7 @@
             <div class="container mt-3" id="e-deporte">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">ELIMINAR DEPORTES</h1>
+                    <h5 class="text-center mt-4">PROXIMAMENTE</h5>
                 </div>
             </div>
 
