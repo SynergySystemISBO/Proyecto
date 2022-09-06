@@ -458,3 +458,7 @@ input[type=checkbox] {
 #e-deporte{
     display: none;
 }
+
+.escudo-tabla{
+    width: 30px;
+}
