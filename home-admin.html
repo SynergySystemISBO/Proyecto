@@ -320,23 +320,20 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Apellido"
-                                value="Rodriguez">
+                            <input type="text" class="form-control" placeholder="Apellido" value="Rodriguez">
                         </div>
 
 
                         <div class="form-outline mb-4">
-                            <input type="password" class="form-control" placeholder="Contraseña"
-                                value="hola123">
+                            <input type="password" class="form-control" placeholder="Contraseña" value="hola123">
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="email" class="form-control" placeholder="Mail"
-                                value="pedror@gmail.com">
+                            <input type="email" class="form-control" placeholder="Mail" value="pedror@gmail.com">
                         </div>
 
                         <div class="form-outline mb-4">
-                            <select name="posicion"  class="form-control">
+                            <select name="posicion" class="form-control">
                                 <option value="" disabled>ROL</option>
                                 <option value="dt" selected>DT</option>
                                 <option value="arbitro">ARBITRO</option>
@@ -359,46 +356,14 @@
             <div class="container mt-3" id="e-usuarios">
                 <div class="card-body p-md-5 mx-md-4">
                     <h1 class="text-center">ELIMINAR USUARIOS</h1>
-                    <form>
+                    <form id="formEliminar" method="post">
 
                         <div class="form-outline mb-4">
-                            <input type="number"  class="form-control" placeholder="INGRESE CI">
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Nombre" value="Pedro"
-                                disabled>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Apellido"
-                                value="Rodriguez" disabled>
-                        </div>
-
-
-                        <div class="form-outline mb-4">
-                            <input type="password" class="form-control" placeholder="Contraseña"
-                                value="hola123" disabled>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="email" class="form-control" placeholder="Mail"
-                                value="pedror@gmail.com" disabled>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <select name="posicion" class="form-control">
-                                <option value="" disabled>ROL</option>
-                                <option value="dt" selected disabled>DT</option>
-                                <option value="arbitro" disabled>ARBITRO</option>
-                                <option value="estadistico" disabled>ESTADISTICO</option>
-                                <option value="scouting" disabled>SCOUTING</option>
-                                <option value="admin" disabled>ADMIN</option>
-                            </select>
+                            <input type="number" id="idInput" class="form-control" placeholder="INGRESE CI">
                         </div>
 
                         <div class="text-center pt-1 mb-5 pb-1 mt-4">
-                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                            <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="submit">
                                 ELIMINAR
                             </button>
                         </div>
@@ -427,8 +392,7 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="date" id="fecha-nac" class="form-control"
-                                required>
+                            <input type="date" id="fecha-nac" class="form-control" required>
                         </div>
 
                         <div class="form-outline mb-4">
@@ -487,23 +451,20 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Nombre" required
-                                value="Pedro">
+                            <input type="text" class="form-control" placeholder="Nombre" required value="Pedro">
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Apellido" required
-                                value="Pedrosa">
+                            <input type="text" class="form-control" placeholder="Apellido" required value="Pedrosa">
                         </div>
 
 
                         <div class="form-outline mb-4">
-                            <input type="date" class="form-control"
-                                required value="1999-09-29">
+                            <input type="date" class="form-control" required value="1999-09-29">
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="number"  class="form-control" placeholder="Altura" value="189">
+                            <input type="number" class="form-control" placeholder="Altura" value="189">
                         </div>
 
                         <div class="form-outline mb-4">
@@ -511,7 +472,7 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <select name="deporte"  class="form-control">
+                            <select name="deporte" class="form-control">
                                 <option value="" disabled>Deporte</option>
                                 <option value="futbol" selected>Fútbol</option>
                                 <option value="basketball">Basketball</option>
@@ -557,24 +518,22 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Nombre" required
-                                value="Pedro" disabled>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="text" class="form-control" placeholder="Apellido" required
-                                value="Pedrosa" disabled>
-                        </div>
-
-
-                        <div class="form-outline mb-4">
-                            <input type="date" class="form-control"
-                                required value="1999-09-29" disabled>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="number" class="form-control" placeholder="Altura" value="189"
+                            <input type="text" class="form-control" placeholder="Nombre" required value="Pedro"
                                 disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="text" class="form-control" placeholder="Apellido" required value="Pedrosa"
+                                disabled>
+                        </div>
+
+
+                        <div class="form-outline mb-4">
+                            <input type="date" class="form-control" required value="1999-09-29" disabled>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" class="form-control" placeholder="Altura" value="189" disabled>
                         </div>
 
                         <div class="form-outline mb-4">
@@ -626,7 +585,7 @@
                     <form>
 
                         <div class="form-outline mb-4">
-                            <input type="text"  class="form-control" placeholder="Nombre" required>
+                            <input type="text" class="form-control" placeholder="Nombre" required>
                         </div>
 
                         <div class="form-outline mb-4">
@@ -679,7 +638,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="deporte" class="form-control">
-                                <option value=""  disabled>Deporte</option>
+                                <option value="" disabled>Deporte</option>
                                 <option value="futbol" selected>Fútbol</option>
                                 <option value="basketball">Basketball</option>
                                 <option value="handball">Handball</option>
@@ -688,7 +647,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="liga" class="form-control">
-                                <option value=""  disabled>Liga</option>
+                                <option value="" disabled>Liga</option>
                                 <option value="l1">Liga 1</option>
                                 <option value="l2" selected>Liga 2</option>
                                 <option value="l3">Liga 3</option>
@@ -727,7 +686,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="deporte" class="form-control" disabled>
-                                <option value=""  >Deporte</option>
+                                <option value="">Deporte</option>
                                 <option value="futbol" selected>Fútbol</option>
                                 <option value="basketball">Basketball</option>
                                 <option value="handball">Handball</option>
@@ -736,7 +695,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="liga" class="form-control" disabled>
-                                <option value=""  disabled>Liga</option>
+                                <option value="" disabled>Liga</option>
                                 <option value="l1">Liga 1</option>
                                 <option value="l2" selected>Liga 2</option>
                                 <option value="l3">Liga 3</option>
@@ -771,7 +730,7 @@
                         <div class="form-outline mb-4">
                             <select name="deporte" class="form-control">
                                 <option value="" selected>Deporte</option>
-                                <option value="futbol" >Fútbol</option>
+                                <option value="futbol">Fútbol</option>
                                 <option value="basketball">Basketball</option>
                                 <option value="handball">Handball</option>
                             </select>
@@ -802,7 +761,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="deporte" class="form-control" disabled>
-                                <option value="" >Deporte</option>
+                                <option value="">Deporte</option>
                                 <option value="futbol">Fútbol</option>
                                 <option value="basketball">Basketball</option>
                                 <option value="handball" selected>Handball</option>
@@ -826,7 +785,7 @@
                     <h1 class="text-center">CREAR PARTIDOS</h1>
                     <form>
                         <div class="form-outline mb-4">
-                            <select name="deporte" class="form-control" >
+                            <select name="deporte" class="form-control">
                                 <option value="" selected>Deporte</option>
                                 <option value="futbol">Fútbol</option>
                                 <option value="basketball">Basketball</option>
@@ -836,7 +795,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="liga" class="form-control">
-                                <option value="" >Liga</option>
+                                <option value="">Liga</option>
                                 <option value="l1">Liga 1</option>
                                 <option value="l2">Liga 2</option>
                                 <option value="l3">Liga 3</option>
@@ -867,7 +826,7 @@
                         <div class="form-outline mb-4">
                             <select name="equipo" class="form-control">
                                 <option value="" disabled selected>Equipo Visitante</option>
-                                <option value="eq1" >Equipo 1</option>
+                                <option value="eq1">Equipo 1</option>
                                 <option value="eq2">Equipo 2</option>
                                 <option value="eq3">Equipo 3</option>
                                 <option value="c4" disabled> ...</option>
@@ -940,7 +899,7 @@
                     <h1 class="text-center">ACTUALIZAR PARTIDOS</h1>
                     <form>
                         <div class="form-outline mb-4">
-                            <select name="deporte" class="form-control" >
+                            <select name="deporte" class="form-control">
                                 <option value="" selected>Deporte</option>
                                 <option value="futbol">Fútbol</option>
                                 <option value="basketball">Basketball</option>
@@ -950,7 +909,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="liga" class="form-control">
-                                <option value="" >Liga</option>
+                                <option value="">Liga</option>
                                 <option value="l1">Liga 1</option>
                                 <option value="l2">Liga 2</option>
                                 <option value="l3">Liga 3</option>
@@ -981,7 +940,7 @@
                         <div class="form-outline mb-4">
                             <select name="equipo" class="form-control">
                                 <option value="" disabled selected>Equipo Visitante</option>
-                                <option value="eq1" >Equipo 1</option>
+                                <option value="eq1">Equipo 1</option>
                                 <option value="eq2">Equipo 2</option>
                                 <option value="eq3">Equipo 3</option>
                                 <option value="c4" disabled> ...</option>
@@ -992,7 +951,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="cancha" class="form-control">
-                                <option value="" disabled >CANCHA</option>
+                                <option value="" disabled>CANCHA</option>
                                 <option value="c1" selected>CANCHA 1</option>
                                 <option value="c2">CANCHA 2</option>
                                 <option value="c3">CANCHA 3</option>
@@ -1002,9 +961,9 @@
 
                         <div class="form-outline mb-4">
                             <select name="arbiro" class="form-control">
-                                <option value="" disabled >ARBITRO</option>
+                                <option value="" disabled>ARBITRO</option>
                                 <option value="c1" selected>ARBITRO 1</option>
-                                <option value="c2" >ARBITRO 2</option>
+                                <option value="c2">ARBITRO 2</option>
                                 <option value="c3">ARBITRO 3</option>
                                 <option value="c4" disabled> ...</option>
                             </select>
@@ -1012,7 +971,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="asistente1" class="form-control">
-                                <option value="" disabled >PRIMER ASISTENTE</option>
+                                <option value="" disabled>PRIMER ASISTENTE</option>
                                 <option value="c1">ASISTENTE 1</option>
                                 <option value="c2">ASISTENTE 2</option>
                                 <option value="c3" selected>ASISTENTE 3</option>
@@ -1022,7 +981,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="asistente2" class="form-control">
-                                <option value="" disabled >SEGUNDO ASISTENTE</option>
+                                <option value="" disabled>SEGUNDO ASISTENTE</option>
                                 <option value="c1" selected>ASISTENTE 1</option>
                                 <option value="c2">ASISTENTE 2</option>
                                 <option value="c3">ASISTENTE 3</option>
@@ -1032,7 +991,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="hora" class="form-control">
-                                <option value="" disabled >HORA</option>
+                                <option value="" disabled>HORA</option>
                                 <option value="c1">13:30</option>
                                 <option value="c2" selected>15:30</option>
                                 <option value="c3">17:30</option>
@@ -1056,7 +1015,7 @@
                     <h1 class="text-center">ELIMINAR PARTIDOS</h1>
                     <form>
                         <div class="form-outline mb-4">
-                            <select name="deporte" class="form-control" >
+                            <select name="deporte" class="form-control">
                                 <option value="" selected>Deporte</option>
                                 <option value="futbol">Fútbol</option>
                                 <option value="basketball">Basketball</option>
@@ -1066,7 +1025,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="liga" class="form-control">
-                                <option value="" >Liga</option>
+                                <option value="">Liga</option>
                                 <option value="l1">Liga 1</option>
                                 <option value="l2">Liga 2</option>
                                 <option value="l3">Liga 3</option>
@@ -1097,7 +1056,7 @@
                         <div class="form-outline mb-4">
                             <select name="equipo" class="form-control">
                                 <option value="" disabled selected>Equipo Visitante</option>
-                                <option value="eq1" >Equipo 1</option>
+                                <option value="eq1">Equipo 1</option>
                                 <option value="eq2">Equipo 2</option>
                                 <option value="eq3">Equipo 3</option>
                                 <option value="c4" disabled> ...</option>
@@ -1108,7 +1067,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="cancha" class="form-control" disabled>
-                                <option value="" disabled >CANCHA</option>
+                                <option value="" disabled>CANCHA</option>
                                 <option value="c1" selected>CANCHA 1</option>
                                 <option value="c2">CANCHA 2</option>
                                 <option value="c3">CANCHA 3</option>
@@ -1118,9 +1077,9 @@
 
                         <div class="form-outline mb-4">
                             <select name="arbiro" class="form-control" disabled>
-                                <option value="" disabled >ARBITRO</option>
+                                <option value="" disabled>ARBITRO</option>
                                 <option value="c1" selected>ARBITRO 1</option>
-                                <option value="c2" >ARBITRO 2</option>
+                                <option value="c2">ARBITRO 2</option>
                                 <option value="c3">ARBITRO 3</option>
                                 <option value="c4" disabled> ...</option>
                             </select>
@@ -1128,7 +1087,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="asistente1" class="form-control" disabled>
-                                <option value="" disabled >PRIMER ASISTENTE</option>
+                                <option value="" disabled>PRIMER ASISTENTE</option>
                                 <option value="c1">ASISTENTE 1</option>
                                 <option value="c2">ASISTENTE 2</option>
                                 <option value="c3" selected>ASISTENTE 3</option>
@@ -1138,7 +1097,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="asistente2" class="form-control" disabled>
-                                <option value="" disabled >SEGUNDO ASISTENTE</option>
+                                <option value="" disabled>SEGUNDO ASISTENTE</option>
                                 <option value="c1" selected>ASISTENTE 1</option>
                                 <option value="c2">ASISTENTE 2</option>
                                 <option value="c3">ASISTENTE 3</option>
@@ -1148,7 +1107,7 @@
 
                         <div class="form-outline mb-4">
                             <select name="hora" class="form-control" disabled>
-                                <option value="" disabled >HORA</option>
+                                <option value="" disabled>HORA</option>
                                 <option value="c1">13:30</option>
                                 <option value="c2" selected>15:30</option>
                                 <option value="c3">17:30</option>
@@ -1202,14 +1161,36 @@
     <!-- jQuery-->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <!-- Popper.JS -->
-    <script src="assets/js/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    ></script>
     <!-- Bootstrap JS -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- Script para el overlay -->
     <script src="assets/js/overlay.js"></script>
     <!-- Script para los btns -->
     <script src="assets/js/botonesAdmin.js"></script>
+
+
+    <script>
+        $("#formEliminar").submit(function (e) {
+            e.preventDefault();
+            let id = $("#idInput").val();
+            fetch('http://localhost/Backend/admin/delete/' + id, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+                // Exito
+                .then(response => response.json()) // convertir a json
+                .then(json => console.log(json))    //imprimir los datos en la consola
+                .catch(err => console.log('Solicitud fallida', err)); // Capturar errores
+        });
+        // Solicitud GET (Request).
+
+    </script>
 
 </body>
 

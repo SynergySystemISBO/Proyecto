@@ -108,7 +108,7 @@
               <h4 class="mt-1 mb-5 pb-1">S.I.G.D</h4>
             </div>
 
-            <form>
+            <form id="loginForm" method="post">
               <p>Iniciar sesión</p>
 
               <div class="form-outline mb-4">
@@ -120,7 +120,7 @@
               </div>
 
               <div class="text-center pt-1 mb-5 pb-1">
-                <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="submit">
                   Iniciar sesion
                 </button>
                 <a class="text-muted" href="#!">Olvide mi contraseña</a>
@@ -176,6 +176,33 @@
   <!-- Script para el overlay -->
   <script src="assets/js/overlay.js"></script>
 
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#loginForm').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: 'http://localhost/Backend/',
+                data: $(this).serialize(),
+                success: function(response)
+                {
+                    var jsonData = JSON.parse(response);
+     
+                    // user is logged in successfully in the back-end
+                    // let's redirect
+                    if (jsonData.success == "1")
+                    {
+                        console.log(jsonData);
+                    }
+                    else
+                    {
+                        alert('Invalid Credentials!');
+                    }
+               }
+           });
+         });
+    });
+    </script>
 </body>
 
 </html>
