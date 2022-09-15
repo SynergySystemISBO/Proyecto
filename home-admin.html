@@ -1178,7 +1178,7 @@
             e.preventDefault();
             let id = $("#idInput").val();
             fetch('http://localhost/Backend/admin/delete/' + id, {
-                method: "DELETE",
+                method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
                 },

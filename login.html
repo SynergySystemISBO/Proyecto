@@ -112,11 +112,13 @@
               <p>Iniciar sesión</p>
 
               <div class="form-outline mb-4">
-                <input type="email" id="form2Example11" class="form-control" placeholder="Correo electronico" />
+                <input type="email" id="inputEmail" class="form-control" placeholder="Correo electronico"
+                  name="correo" />
               </div>
 
               <div class="form-outline mb-4">
-                <input type="password" id="form2Example22" class="form-control" placeholder="Contraseña" />
+                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña"
+                  name="password" />
               </div>
 
               <div class="text-center pt-1 mb-5 pb-1">
@@ -177,32 +179,39 @@
   <script src="assets/js/overlay.js"></script>
 
   <script type="text/javascript">
-    $(document).ready(function() {
-        $('#loginForm').submit(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: 'http://localhost/Backend/',
-                data: $(this).serialize(),
-                success: function(response)
-                {
-                    var jsonData = JSON.parse(response);
-     
-                    // user is logged in successfully in the back-end
-                    // let's redirect
-                    if (jsonData.success == "1")
-                    {
-                        console.log(jsonData);
-                    }
-                    else
-                    {
-                        alert('Invalid Credentials!');
-                    }
-               }
-           });
+    $(document).ready(function () {
+      $('#loginForm').submit(function (e) {
+        e.preventDefault();
+        let correo = $('#inputEmail').val();
+        let password = $('#inputPassword').val();
+        let data = { email: correo, password: password };
+          $.ajax({
+              type: "POST",
+              url: 'http://localhost/Backend/login',
+              data: data,
+              success: function(response)
+              {
+                  var jsonData = JSON.parse(response);
+
+                  // user is logged in successfully in the back-end
+                  // let's redirect
+                  if (jsonData.success == "1")
+                  {
+                    sessionStorage.setItem("token", jsonData.token);
+                    sessionStorage.setItem("nombre", jsonData.nombre);
+                    sessionStorage.setItem("apellido", jsonData.apellido);
+                    sessionStorage.setItem("email", jsonData.email);
+                    sessionStorage.setItem("rol", jsonData.rol);
+                  }
+                  else
+                  {
+                      alert('Invalid Credentials!');
+                  }
+             }
          });
+      });
     });
-    </script>
+  </script>
 </body>
 
 </html>
