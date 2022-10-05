@@ -1,0 +1,46 @@
+                <p class="h3 text-center"><u>Crear usuario</u></p>
+                <form id="createUserForm">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCreateEmailUser">Correo electronico</label>
+                            <input type="email" class="form-control" id="inputCreateEmailUser"
+                                placeholder="ejemplo@correo.com" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCreatePasswordUser">Contraseña</label>
+                            <input type="password" class="form-control" id="inputCreatePasswordUser"
+                                placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCreateNameUser">Nombre</label>
+                            <input type="text" class="form-control" id="inputCreateNameUser" placeholder="Nombre..."
+                                required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCreateApellidoUser">Apellido</label>
+                            <input type="text" class="form-control" id="inputCreateApellidoUser"
+                                placeholder="Apellido..." required>
+                        </div>
+                    </div>
+                    <div class="form-row justify-content-center">
+                        <div class="form-group col-md-4">
+                            <label for="inputCreateRolUser">Rol</label>
+                            <select id="inputCreateRolUser" class="form-control" name="selectCreateRol" required>
+                                <option selected value="" hidden>Elige una opcion:</option>
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="DT">DT</option>
+                                <option value="Arbitro">Arbitro</option>
+                                <option value="Estadistico">Estadistico</option>
+                                <option value="Scouting">Scouting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" id="createUserSubmitButton"><i class="fas fa-user-plus"></i></i> Crear</button>
+                        <div class="container w-50 mt-4">
+                            <div class="alert" id="alert">Algo sucedió...</div>
+                        </div>
+                    </div>
+                </form>

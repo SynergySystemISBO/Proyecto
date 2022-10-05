@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>S.I.G.D - Menu Usuario</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo-pagina.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Barra lateral -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <a href="index.html" title="Ir al menu principal">
+                <img src="assets/img/logo-pagina.png" alt="" class="logo-image" />
+                <h3>S.I.G.D</h3>
+            </a>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <p>Bienvenido!</p>
+            </li>
+            <li>
+                <a href="index.html">Menú Principal</a>
+            </li>
+            <li id="liMenuExtra" class="active">
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Competencias
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="competencias.html">Fútbol</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html">Basketball</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html">Handball</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="jugadores.html">Jugadores</a>
+            </li>
+            <li>
+                <a href="equipos.html">Equipos</a>
+            </li>
+            <li style='background-color: brown; border-radius: 5px;' id="liLogout">
+            </li>
+
+        </ul>
+    </nav>
+    <!-- Fin barra lateral -->
+    <!-- NavBar y Contenido  -->
+    <div id="content">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark mt-2">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+
+                    <a class="mt-2 btn btn-outline-dark float-right" href="login.html" id="nomUsuario"><i
+                            class="fa fa-user"></i>
+                        Iniciar sesión
+                    </a>
+
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid w-100">
+            <!-- Contenido de la pagina aca abajo -->
+            <div class="jumbotron shadow-lg" id="Jumbotron">
+                <h1 class="display-12">Bienvenid@s!</h1>
+                <p>¿Queres informarte de las ligas deportivas de la utu?</p>
+                <hr class="my-4">
+                <p>Nostros te brindamos la información al instante!</p>
+            </div>
+            <h2 class="text-center">Opciones</h2>
+
+            <div>
+                <!-- NavBar de opciones -->
+                <ul class="nav nav-tabs justify-content-center" id="navbarOpciones">
+                </ul>
+            </div>
+
+            <!-- CONTAINER PARA FORMULARIO -->
+            <div class="container mt-4 text-center" id="containerFormulario">
+                <span class="border border-primary p-2 text-muted">Seleccione una opcion para desplegar
+                    formulario</span>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Eliminar usuario</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Esta seguro que quiere eliminar al usuario?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="buttonDeleteUser">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contenido de la pagina arriba de aca -->
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jQuery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para el overlay -->
+    <script src="assets/js/overlay.js"></script>
+    <!-- Handlebars -->
+    <script src="assets/js/handlebars-v4.7.7.js"></script>
+    <!-- Templates -->
+    <script src="assets/js/templates.js"></script>
+    <!-- Auth -->
+    <script src="assets/js/auth.js"></script>
+    <!-- CRUDUsuarios -->
+    <script src="assets/js/CRUDUsuarios.js"></script>
+
+</body>
+
+</html>
