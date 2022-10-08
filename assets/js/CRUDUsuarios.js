@@ -1,5 +1,5 @@
 let barraDeBusqueda = '';
-const dataToken = JSON.parse(sessionStorage.getItem('data'));
+const dataToken = JSON.parse(localStorage.getItem('data'));
 
 $(document).ready(function () {
     switch (dataToken['rol']) {
@@ -164,7 +164,7 @@ $(document.body).on("submit", "#createUserForm", function (e) {
             .then(data => {
                 if (data.success == "1") {
                     alertManager('success', data.mensaje);
-                    this.reset();
+                    // this.reset();
                 }
                 else {
                     alertManager('error', data.mensaje);
@@ -272,7 +272,7 @@ $(document.body).on("submit", "#createUserForm", function (e) {
             throw 'Se modifico el id'
         }
 
-        if(id === data['id']){
+        if(id === dataToken['id']){
             throw 'No puedes eliminar tu usuario';
         }
 

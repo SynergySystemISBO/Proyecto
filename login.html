@@ -123,23 +123,54 @@
               </div>
 
               <div class="text-center pt-1 mb-5 pb-1">
-                <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="submit" id="loginSubmitbutton">
+                <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                  id="loginSubmitbutton">
                   Iniciar sesion
                 </button>
-                <a class="text-muted" href="#!">Olvide mi contraseña</a>
+                <a class="text-muted" href="#" data-toggle="modal" data-target="#requestPasswordModal">Olvide mi contraseña</a>
               </div>
 
             </form>
-            
+
           </div>
           <div class="alert" id="alert">Algo sucedió...</div>
+        </div>
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="requestPasswordModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Solicitar cambio de contraseña</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container w-75">
+                <form action="" id="resetPasswordForm">
+                <div class="form-outline mb-4">
+                  <label for="inputEmailReset">Correo electronico:</label>
+                  <input type="email" id="inputEmailReset" class="form-control" placeholder="Correo electronico"
+                    name="correo" required/>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-warning" id="resetPasswordButton"">Solicitar</button>
+            </div>
+          </form>
+          </div>
         </div>
       </div>
       <!-- Contenido de la pagina arriba de aca -->
     </div>
   </div>
 
-  
+
 
   <div class="overlay"></div>
 

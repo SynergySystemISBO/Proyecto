@@ -1,18 +1,18 @@
-token = sessionStorage.getItem("token")
+token = localStorage.getItem("token")
 
-const URLprefijo = 'http://localhost/Frontend'
-const URLprefijoAPI = 'http://localhost/Backend';
+const URLprefijo = 'http://sigd-frontend.localhost'
+const URLprefijoAPI = 'http://sigd.localhost';
 const URLActual = window.location.href;
 
 const URLNoPermitidasSinToken = [URLprefijo + "/menu_usuario.html",];
-const URLNoPermitidasConToken = [URLprefijo + "/login.html",];
+const URLNoPermitidasConToken = [URLprefijo + "/login.html", URLprefijo + "/resetPassword.html"];
 
 
 if (token != null) {
 
     VerificarQueNoRequieraToken();
 
-    fetch('http://localhost/Backend/validateToken', {
+    fetch(URLprefijoAPI + '/validateToken', {
         method: 'GET',
         headers: {
             'Authorization': token
@@ -22,7 +22,7 @@ if (token != null) {
         .then(data => {
             if (data.success == "1") {
                 jwt = parseJwt(token);
-                sessionStorage.setItem("data", JSON.stringify(jwt['data']));
+                localStorage.setItem("data", JSON.stringify(jwt['data']));
 
                 templatesNavbar();
 
@@ -31,17 +31,19 @@ if (token != null) {
                 }
             }
             else {
-                sessionStorage.removeItem("token");
-                if (sessionStorage.getItem('data') !== undefined && sessionStorage.getItem('data')) {
-                    sessionStorage.removeItem("data");
+                localStorage.removeItem("token");
+                if (localStorage.getItem('data') !== undefined && localStorage.getItem('data')) {
+                    localStorage.removeItem("data");
                 }
+                window.location.replace(URLprefijo + "/index.html");
             }
         })
         .catch(err => {
-            sessionStorage.removeItem("token");
-            if (sessionStorage.getItem('data') !== undefined && sessionStorage.getItem('data')) {
-                sessionStorage.removeItem("data");
+            localStorage.removeItem("token");
+            if (localStorage.getItem('data') !== undefined && localStorage.getItem('data')) {
+                localStorage.removeItem("data");
             }
+            window.location.replace(URLprefijo + "/index.html");
         })
 }
 else {
@@ -105,9 +107,9 @@ const templatesJumbotron = () => {
 
 }
 
+//Click boton deslogueo
 $('#liLogout').click(function (e) {
    logout();
-
 })
 
 
@@ -115,11 +117,11 @@ $('#liLogout').click(function (e) {
  * DESLOGUEO
  ****************************/
 function logout(){
-    if (sessionStorage.getItem('token') !== undefined && sessionStorage.getItem('token')) {
-        sessionStorage.removeItem("token");
+    if (localStorage.getItem('token') !== undefined && localStorage.getItem('token')) {
+        localStorage.removeItem("token");
     }
-    if (sessionStorage.getItem('data') !== undefined && sessionStorage.getItem('data')) {
-        sessionStorage.removeItem("data");
+    if (localStorage.getItem('data') !== undefined && localStorage.getItem('data')) {
+        localStorage.removeItem("data");
     }
     window.location.replace(URLprefijo + "/index.html");
 }
