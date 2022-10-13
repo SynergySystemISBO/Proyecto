@@ -112,9 +112,9 @@
             </div>
 
             <!-- CONTAINER PARA FORMULARIO -->
-            <div class="container mt-4 text-center" id="containerFormulario">
-                <span class="border border-primary p-2 text-muted">Seleccione una opcion para desplegar
-                    formulario</span>
+            <div class="container mt-4" id="containerFormulario">
+                <p class="border border-primary p-2 text-muted text-center">Seleccione una opcion para desplegar
+                    formulario</p>
             </div>
 
             <!-- Modal -->
@@ -139,84 +139,7 @@
                 </div>
             </div>
 
-            <!-- <p class="h3 text-center"><u>Crear jugador</u></p>
-            <form id="createUserForm">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCreateCIUser">C.I</label>
-                        <input type="number" class="form-control" id="inputCreateCIUser"
-                            placeholder="XXXXXXXX" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputCreatePasswordUser">Fecha de nacimiento:</label>
-                        <input type="date" class="form-control" id="inputCreatePasswordUser"
-                            placeholder="Contraseña" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputCreateNameJugador">Nombre</label>
-                        <input type="text" class="form-control" id="inputCreateJugadorUser" placeholder="Nombre..."
-                            required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputCreateApellidoJugador">Apellido</label>
-                        <input type="text" class="form-control" id="inputCreateApellidoJugador"
-                            placeholder="Apellido..." required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="inputCreatePesoJugador">Peso</label>
-                        <input type="number" class="form-control" id="inputCreateJugadorUser" placeholder="Pesoº..."
-                            required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputCreateAlturaJugador">Altura</label>
-                        <input type="number" class="form-control" id="inputCreateApellidoJugador"
-                            placeholder="Altura..." required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="inputCreateDorsalJugador">Dorsal</label>
-                        <input type="number" class="form-control" id="inputCreateApellidoJugador"
-                            placeholder="Dorsal..." required>
-                    </div>
-                </div>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <label for="inputCreateRolUser">Posicion</label>
-                        <select id="inputCreateRolUser" class="form-control" name="selectCreateRol" required>
-                            <option selected value="" hidden>Elige una opcion:</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputCreateRolUser">Equipo</label>
-                        <select id="inputCreateRolUser" class="form-control" name="selectCreateRol" required>
-                            <option selected value="" hidden>Elige una opcion:</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-6">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupFileAddon01">Foto</span>
-                            </div>
-                            <div class="custom-file">
-                              <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                aria-describedby="inputGroupFileAddon01">
-                              <label class="custom-file-label" for="inputGroupFile01">Elige una foto...</label>
-                            </div>
-                          </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary" id="createUserSubmitButton"><i class="fas fa-user-plus"></i></i> Crear</button>
-                    <div class="container w-50 mt-4">
-                        <div class="alert" id="alert">Algo sucedió...</div>
-                    </div>
-                </div>
-            </form> -->
+
             <!-- Contenido de la pagina arriba de aca -->
         </div>
     </div>
@@ -227,8 +150,6 @@
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Script para el overlay -->
-    <script src="assets/js/overlay.js"></script>
     <!-- Handlebars -->
     <script src="assets/js/handlebars-v4.7.7.js"></script>
     <!-- Templates -->
@@ -236,10 +157,10 @@
     <!-- Auth -->
     <script src="assets/js/auth.js"></script>
     <!-- CRUDUsuarios -->
-    <script src="assets/js/CRUDUsuarios.js"></script>
+    <script src="assets/js/Administrador.js"></script>
 
     <script>
-        $('#inputGroupFile01').on('change',function(){
+        $('#inputGroupFile01').on('change', function () {
             //get the file name
             var file = $(this).val();
             var fileName = file.split("\\").slice(-1)

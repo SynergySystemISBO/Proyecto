@@ -100,14 +100,12 @@
     <div class="container-fluid w-100">
       <!-- Contenido de la pagina aca abajo -->
       <div class="row d-flex justify-content-center">
-        <div class="col-md-4">
-          <div class="card-body p-md-5 mx-md-4">
-            <div class="text-center">
-              <a href="index.html" title="Ir al menu principal">
-                <img src="./assets/img/logo-pagina.png" style="width: 150px" alt="logo" />
-              </a>
-              <h4 class="mt-1 mb-5 pb-1">S.I.G.D</h4>
-            </div>
+        <div class="col-lg-2 col-md-4 pt-5">
+          <div class="text-center">
+            <a href="index.html" title="Ir al menu principal">
+              <img src="./assets/img/logo-pagina.png" style="width: 150px" alt="logo" />
+            </a>
+            <h4 class="mt-1 mb-5 pb-1">S.I.G.D</h4>
 
             <form id="loginForm" method="post">
               <p>Iniciar sesión</p>
@@ -118,16 +116,24 @@
               </div>
 
               <div class="form-outline mb-4">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña"
-                  name="password" />
+                <div class="input-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña"
+                    name="password" />
+
+                  <div class="input-group-append">
+                    <button id="show_password" class="btn btn-primary" type="button"> <span
+                        class="fa fa-eye-slash icon"></span> </button>
+                  </div>
+                </div>
               </div>
 
               <div class="text-center pt-1 mb-5 pb-1">
                 <button class="btn btn-login btn-block fa-lg gradient-custom-2 mb-3" type="submit"
                   id="loginSubmitbutton">
-                  Iniciar sesion
+                  Iniciar sesión
                 </button>
-                <a class="text-muted" href="#" data-toggle="modal" data-target="#requestPasswordModal">Olvide mi contraseña</a>
+                <a class="text-muted" href="#" data-toggle="modal" data-target="#requestPasswordModal">Olvidé mi
+                  contraseña</a>
               </div>
 
             </form>
@@ -139,7 +145,8 @@
 
 
       <!-- Modal -->
-      <div class="modal fade" id="requestPasswordModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal fade" id="requestPasswordModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -151,12 +158,12 @@
             <div class="modal-body">
               <div class="container w-75">
                 <form action="" id="resetPasswordForm">
-                <div class="form-outline mb-4">
-                  <label for="inputEmailReset">Correo electronico:</label>
-                  <input type="email" id="inputEmailReset" class="form-control" placeholder="Correo electronico"
-                    name="correo" required/>
-                </div>
-            </div>
+                  <div class="form-outline mb-4">
+                    <label for="inputEmailReset">Correo electronico:</label>
+                    <input type="email" id="inputEmailReset" class="form-control" placeholder="Correo electronico"
+                      name="correo" required />
+                  </div>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -169,19 +176,15 @@
       <!-- Contenido de la pagina arriba de aca -->
     </div>
   </div>
+  <div class=" overlay">
+            </div>
+            <!-- jQuery-->
+            <script src="assets/js/jquery-3.6.0.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
 
-
-
-  <div class="overlay"></div>
-
-  <!-- jQuery-->
-  <script src="assets/js/jquery-3.6.0.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <!-- Script para el overlay -->
-  <script src="assets/js/overlay.js"></script>
-  <script src="assets/js/auth.js"></script>
-  <script src="assets/js/login.js"></script>
+            <script src="assets/js/auth.js"></script>
+            <script src="assets/js/login.js"></script>
 </body>
 
 </html>

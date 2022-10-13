@@ -484,4 +484,18 @@ input[type=checkbox] {
     color: #8a0606;
   }
 
-  
+  fieldset {
+	border-radius: 10px;
+    border:1px solid black;
+    padding: 10px 15px 10px 15px;
+    padding-bottom: 20px;
+}
+
+legend {
+	border-radius: 4px;
+	color: #007bff;
+	font-size: 17px;
+	font-weight: bold;
+	padding: 3px 5px 3px 7px;
+	width: auto;
+}

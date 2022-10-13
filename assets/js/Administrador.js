@@ -36,7 +36,67 @@ $(document).ready(function () {
 
         $('#containerFormulario').html(template());
     })
+
+    //Deportes
+
+    $('#navCreateDeporte').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['createDeporteForm'];
+
+        $('#containerFormulario').html(template());
+    })
+
+    $('#navUpdateDeporte').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['getDeporte'];
+
+        barraDeBusqueda = 'update';
+
+        $('#containerFormulario').html(template());
+    })
+
+
+    $('#navDeleteDeporte').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['getDeporte'];
+
+        barraDeBusqueda = 'delete';
+
+        $('#containerFormulario').html(template());
+    })
+
+    //Jugadores
+    $('#navCreateJugador').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['createJugadorform'];
+
+        $('#containerFormulario').html(template());
+    })
+
+    $('#navUpdateJugador').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['getJugador'];
+
+        barraDeBusqueda = 'update';
+
+        $('#containerFormulario').html(template());
+    })
+
+
+    $('#navDeleteJugador').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['getJugador'];
+
+        barraDeBusqueda = 'delete';
+
+        $('#containerFormulario').html(template());
+    })
+
 })
+
+/***********************************************************
+USUARIOS 
+**************************************************************/
 /***************************************************************
  * BUSCAR USUARIO
  *************************************************************/
@@ -187,7 +247,7 @@ $(document.body).on("submit", "#createUserForm", function (e) {
 /***************************************************************
  * MODIFICAR USUARIO
  *************************************************************/
- $(document.body).on("submit", "#updateUserForm", function (e) {
+$(document.body).on("submit", "#updateUserForm", function (e) {
     e.preventDefault();
     var id = $('#inputIDUser').val();
     var email = $('#inputUpdateEmailUser').val();
@@ -238,7 +298,7 @@ $(document.body).on("submit", "#createUserForm", function (e) {
                     alertManager('success', data.mensaje);
                     $('#updateUserForm').remove();
 
-                    if(id === dataToken['id']){
+                    if (id === dataToken['id']) {
                         logout();
                     }
                 }
@@ -258,12 +318,12 @@ $(document.body).on("submit", "#createUserForm", function (e) {
             $('#updateUserSubmitButton').prop('disabled', false);
         }, 3500);
     }
- })
+})
 
- /***********************************************
-  * ELIMINAR USUARIO
-  ***********************************************/
-  $(document.body).on("click", "#buttonDeleteUser", function (e) {
+/***********************************************
+ * ELIMINAR USUARIO
+ ***********************************************/
+$(document.body).on("click", "#buttonDeleteUser", function (e) {
     e.preventDefault();
     var id = $('#inputIDUser').val();
 
@@ -272,7 +332,7 @@ $(document.body).on("submit", "#createUserForm", function (e) {
             throw 'Se modifico el id'
         }
 
-        if(id === dataToken['id']){
+        if (id === dataToken['id']) {
             throw 'No puedes eliminar tu usuario';
         }
 
@@ -302,4 +362,97 @@ $(document.body).on("submit", "#createUserForm", function (e) {
         alertManager('error', e);
         $('#deleteModal').modal('hide')
     }
-  })
+})
+
+
+
+/**************************************************************
+ * CRUD DEPORTES
+ **************************************************************/
+
+/*********************************************************************
+ * Agregar posiciones a la tabla
+ ********************************************************************/
+ $(document.body).on('click', '#buttonAgregarPosicion', function () {
+    let posicion = $('#inputPosicion').val();
+
+    if (!posicion) {
+        alertManager('error', 'No se ingreso el nombre de la posición');
+    }
+    else {
+        let filas = $('#tablaPosiciones').find('tbody tr').length;
+
+        if (filas === 0) {
+            let html = '<tr id="trPosicion0"> <td>0</td> <td>' + posicion + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion" id="buttonEliminar-0">Eliminar</button></td> </tr>'
+            $('#items').append(html);
+        }
+        else {
+            let filas = parseInt($('tbody tr:last td:first').html());
+            filas = filas + 1;
+            let html = '<tr id="trPosicion' + filas + '"> <td>' + filas + '</td> <td>' + posicion + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion" id="buttonEliminar-' + filas + '">Eliminar</button></td> </tr>'
+            $('#items').append(html);
+        }
+
+        $('#footerPosiciones').hide();
+    }
+})
+/*********************************************************************
+ * Eliminar posiciones a la tabla
+ ********************************************************************/
+$(document.body).on('click', '.btnsEliminarPosicion', function () {
+    let idBoton = $(this).prop('id');
+
+    let id = idBoton.split('-')[1];
+
+    $("#trPosicion" + id).remove();
+
+    if($('#tablaPosiciones').find('tbody tr').length === 0){
+        $('#footerPosiciones').show();
+    }
+})
+
+/*********************************************************************
+ * Agregar incidencias a la tabla
+ ********************************************************************/
+
+$(document.body).on('click', '#buttonAgregarIncidencia', function () {
+    let NomIncdencia = $('#inputNombreIncidencia').val();
+    let TipoIncdencia = $('#inputTipoIncidencia').val();
+
+    if (!NomIncdencia) {
+        alertManager('error', 'No se ingreso el nombre de la incidencia');
+    }
+    if (!TipoIncdencia) {
+        alertManager('error', 'No se ingreso el tipo de la incidencia');
+    }
+    else {
+        let filas = $('#tablaIncidencias').find('tbody tr').length;
+
+        if (filas === 0) {
+            let html = '<tr id="trIncidencia0"> <td>0</td> <td>' + NomIncdencia + '</td><td>'+TipoIncdencia+'</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-0">Eliminar</button></td> </tr>'
+            $('#itemsIncidencia').append(html);
+        }
+        else {
+            let filas = parseInt($('tbody tr:last td:first').html());
+            filas = filas + 1;
+            let html = '<tr id="trIncidencia' + filas + '"> <td>' + filas + '</td> <td>' + NomIncdencia + '</td><td>'+TipoIncdencia+'</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-'+filas+'">Eliminar</button></td></tr>'
+            $('#itemsIncidencia').append(html);
+        }
+
+        $('#footerIncidencias').hide();
+    }
+})
+/*********************************************************************
+ * Eliminar incidencias de la tabla
+ ********************************************************************/
+$(document.body).on('click', '.btnsEliminarIncidencia', function () {
+    let idBoton = $(this).prop('id');
+
+    let id = idBoton.split('-')[1];
+
+    $("#trIncidencia" + id).remove();
+
+    if($('#tablaIncidencias').find('tbody tr').length === 0){
+        $('#footerIncidencias').show();
+    }
+})

@@ -1,0 +1,112 @@
+<p class="h3 text-center"><u>Crear deporte</u></p>
+<form id="createUserForm">
+
+    <fieldset>
+        <legend>Datos:</legend>
+        <label for="inputCreateNameDeporte">Nombre</label>
+        <input type="text" class="form-control" id="inputCreateNameDeporte" placeholder="Nombre..." required>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Partido:</legend>
+        <div class="form-row">
+            <div class="col">
+                <label for="inputConvocables">Jugadores convocables:</label>
+                <input type="number" class="form-control" id="inputConvocables" placeholder="Jugadores convocables..."
+                    required>
+            </div>
+            <div class="col">
+                <label for="inputTitulares">Jugadores titulares:</label>
+                <input type="number" class="form-control" id="inputTitulares" placeholder="Jugadores titulares..."
+                    required>
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Posiciones:</legend>
+        <div class="form-row">
+            <div class="col">
+                <div class="form-outline mb-3">
+                    <label for="inputPosicion">Nombre posición del jugador:</label>
+                    <div class="input-group">
+                        <input type="text" id="inputPosicion" class="form-control" placeholder="Nombre..." />
+                        <div class="input-group-append">
+                            <button id="buttonAgregarPosicion" class="btn btn-primary" type="button"><i
+                                    class="fas fa-plus-circle"></i> Agregar </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table" id="tablaPosiciones">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="items">
+
+            </tbody>
+            <tfoot>
+                <tr id="footerPosiciones" class="text-center">
+                    <th scope="row" colspan="5">No hay posiciones agregadas aún</th>
+                </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Incidencias:</legend>
+        <div class="form-row">
+            <div class="col">
+                <label for="inputNombreIncidencia">Nombre:</label>
+                <input type="text" class="form-control" id="inputNombreIncidencia" placeholder="Nombre..." required>
+            </div>
+            <div class="col">
+                <div class="form-outline mb-3">
+                    <label for="inputTipoIncidencia">Tipo:</label>
+                    <div class="input-group">
+                        <select id="inputTipoIncidencia" class="form-control">
+                            <option value="" hidden selected>Seleccione un tipo</option>
+                            <option value="Estadistica">Estadistica</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button id="buttonAgregarIncidencia" class="btn btn-primary" type="button"><i
+                                    class="fas fa-plus-circle"></i> Agregar </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table" id="tablaIncidencias">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="itemsIncidencia"></tbody>
+            <tfoot>
+                <tr id="footerIncidencias" class="text-center">
+                    <th scope="row" colspan="5">No hay incidencias agregadas aún</th>
+                </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary mt-3" id="createUserSubmitButton"><i
+                class="fas fa-plus-circle"></i> Crear</button>
+        <div class="container w-50 mt-4">
+            <div class="alert" id="alert">Algo sucedió...</div>
+        </div>
+    </div>
+
+</form>
