@@ -1,10 +1,12 @@
 <p class="h3 text-center"><u>Crear deporte</u></p>
-<form id="createDeporteForm">
+<form id="updateDeporteForm">
+
+    <input type="number" id="iddeporte" value="{{iddeporte}}" disabled hidden>
 
     <fieldset>
         <legend>Datos:</legend>
         <label for="inputCreateNameDeporte">Nombre</label>
-        <input type="text" class="form-control" id="inputCreateNameDeporte" placeholder="Nombre..." required>
+        <input type="text" class="form-control" id="inputCreateNameDeporte" value="{{nomdeporte}}" required>
 
     </fieldset>
 
@@ -14,12 +16,12 @@
             <div class="col">
                 <label for="inputConvocables">Jugadores convocables:</label>
                 <input type="number" class="form-control" id="inputConvocables" placeholder="Jugadores convocables..."
-                    required>
+                    value="{{convocables}}" required>
             </div>
             <div class="col">
                 <label for="inputTitulares">Jugadores titulares:</label>
                 <input type="number" class="form-control" id="inputTitulares" placeholder="Jugadores titulares..."
-                    required>
+                    value="{{titulares}}" required>
             </div>
         </div>
 
@@ -51,13 +53,15 @@
                     </tr>
                 </thead>
                 <tbody id="items">
-
-                </tbody>
-                <tfoot>
-                    <tr id="footerPosiciones" class="text-center">
-                        <th scope="row" colspan="5">No hay posiciones agregadas aún</th>
+                    {{#each posiciones}}
+                    <tr id="trPosicion0">
+                        <td>{{this.idposicion}}</td>
+                        <td class="tdPosicion">{{this.nombre}}</td>
+                        <td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion"
+                                id="buttonEliminar-0">Eliminar</button></td>
                     </tr>
-                </tfoot>
+                    {{/each}}
+                </tbody>
             </table>
         </div>
     </fieldset>
@@ -88,65 +92,23 @@
                         </tr>
                     </thead>
                     <tbody id="itemsIncidencia">
-                        <tr id="trIncidencia0">
-                            <td>0</td>
-                            <td class="incidenciaNombre">Jugados</td>
-                            <td>OBLIGATORIO</td>
+                        {{#each incidencias}}
+                        <tr id="trIncidencia{{{this.idincidencia}}}">
+                            <td>{{this.idincidencia}}</td>
+                            <td class="incidenciaNombre">{{this.nombre}}</td>
+                            <td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia"
+                                    id="buttonEliminar-0">Eliminar</button></td>
                         </tr>
-                        <tr id="trIncidencia1">
-                            <td>1</td>
-                            <td class="incidenciaNombre">Ganados</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia2">
-                            <td>2</td>
-                            <td class="incidenciaNombre">Perdidos</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia3">
-                            <td>3</td>
-                            <td class="incidenciaNombre">Empatados</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
+                        {{/each}}
 
-                        <tr id="trIncidencia4">
-                            <td>4</td>
-                            <td class="incidenciaNombre">GF</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia5">
-                            <td>5</td>
-                            <td class="incidenciaNombre">GC</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia6">
-                            <td>6</td>
-                            <td class="incidenciaNombre">DIF</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia7">
-                            <td>7</td>
-                            <td class="incidenciaNombre">PTS</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia8">
-                            <td>8</td>
-                            <td class="incidenciaNombre">Amonestación</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
-                        <tr id="trIncidencia9">
-                            <td>9</td>
-                            <td class="incidenciaNombre">Expulsion</td>
-                            <td>OBLIGATORIO</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
     </fieldset>
 
     <div class="text-center">
-        <button type="submit" class="btn btn-primary mt-3" id="createUserSubmitButton"><i
-                class="fas fa-plus-circle"></i> Crear</button>
+        <button type="submit" class="btn btn-warning mt-3" id="createUserSubmitButton"><i
+                class="fas fa-plus-circle"></i> Actualizar</button>
         <div class="container w-50 mt-4">
             <div class="alert" id="alert">Algo sucedió...</div>
         </div>

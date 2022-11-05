@@ -3,7 +3,7 @@ const dataToken = JSON.parse(localStorage.getItem('data'));
 
 $(document).ready(function () {
     switch (dataToken['rol']) {
-        case 'Administrativo':
+        case 'administrativo':
             var template = Handlebars.templates['navbarAdmin'];
 
             $('#navbarOpciones').html(template());
@@ -55,15 +55,6 @@ $(document).ready(function () {
         $('#containerFormulario').html(template());
     })
 
-
-    $('#navDeleteDeporte').click(function (e) {
-        e.preventDefault();
-        var template = Handlebars.templates['getDeporte'];
-
-        barraDeBusqueda = 'delete';
-
-        $('#containerFormulario').html(template());
-    })
 
     //Jugadores
     $('#navCreateJugador').click(function (e) {
@@ -370,6 +361,128 @@ $(document.body).on("click", "#buttonDeleteUser", function (e) {
  * CRUD DEPORTES
  **************************************************************/
 
+/***************************************************************
+ * OBTENER DEPORTE
+ *************************************************************/
+ $(document.body).on("submit", "#getDeporteForm", function (e) {
+    //Formulario de registrar usuario
+    e.preventDefault();
+    var deporte = $('#inputGetDeporte').val();
+
+    try {
+        if (!deporte) {
+            throw 'Hay que ingresar un nombre de deporte'
+        }
+        fetch(URLprefijoAPI + '/getDeporte/' + deporte, {
+            method: 'GET',
+            headers: {
+                Authorization: token,
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success == "1") {
+                    alertManager('success', 'Deporte encontrado');
+                    this.reset();
+
+
+                    var template = Handlebars.templates[barraDeBusqueda + 'DeporteForm'];
+
+
+                    let dataDeporte = {
+                        iddeporte: data['deporte'].iddeporte,
+                        nomdeporte: data['deporte'].nomdeporte,
+                        convocables: data['deporte'].convocables,
+                        titulares: data['deporte'].titulares,
+                        posiciones: data['posiciones'],
+                        incidencias: data['incidencias'],
+                    };
+
+
+                    if ($('#' + barraDeBusqueda + 'DeporteForm').length) {
+                        $('#' + barraDeBusqueda + 'DeporteForm').remove();
+                        $('#containerFormulario').append(template( dataDeporte));
+                    }
+                    else {
+                        $('#containerFormulario').append(template( dataDeporte));
+                    }
+                }
+                 else {
+                     $('#getUserSubmitButton').prop('disabled', true);
+                     alertManager('error', 'No existe el deporte o hubo un error');
+                     setTimeout(() => {
+                         $('#getUserSubmitButton').prop('disabled', false);
+                     }, 3500);
+                }
+            })
+            .catch(err => {
+                $('#getUserSubmitButton').prop('disabled', true);
+                alertManager('error', 'No existe el deporte o hubo un error');
+                setTimeout(() => {
+                    $('#getUserSubmitButton').prop('disabled', false);
+                }, 3500);
+            })
+    }
+    catch (e) {
+        $('#getUserSubmitButton').prop('disabled', true);
+        alertManager('error', e);
+        setTimeout(() => {
+            $('#getUserSubmitButton').prop('disabled', false);
+        }, 3500);
+    }
+})
+
+/**************************************************************
+ * CREAR DEPORTE
+ **************************************************************/
+ $(document.body).on('submit', '#createDeporteForm', function (e) {
+    e.preventDefault();
+    let nombre = $('#inputCreateNameDeporte').val();
+    let convocables = $('#inputConvocables').val();
+    let titulares = $('#inputTitulares').val();
+    let posiciones = [];
+    let incidencias = [];
+
+document.querySelectorAll('#tablaPosiciones tbody tr').forEach(function(e){
+  posiciones.push(e.querySelector('.tdPosicion').innerText);
+});
+
+document.querySelectorAll('#tablaIncidencias tbody tr').forEach(function(e){
+    incidencias.push(e.querySelector('.incidenciaNombre').innerText);
+  });
+
+  var formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('convocables', convocables);
+  formData.append('titulares', titulares);
+  formData.append('posiciones', JSON.stringify(posiciones));
+  formData.append('incidencias', JSON.stringify(incidencias));
+  
+  fetch(URLprefijoAPI + '/admin/createDeporte', {
+    method: 'POST',
+    body: formData,
+    headers: {
+        'Authorization': token,
+    }
+})
+    .then(res => res.json())
+    .then(data => {
+        if (data.success == "1") {
+            alertManager('success', data.mensaje);
+            this.reset();
+        }
+        else {
+            alertManager('error', data.mensaje);
+        }
+    })
+    .catch(err => {
+        alertManager('error', data.mensaje);
+    })
+
+
+ });
+
+
 /*********************************************************************
  * Agregar posiciones a la tabla
  ********************************************************************/
@@ -383,13 +496,13 @@ $(document.body).on("click", "#buttonDeleteUser", function (e) {
         let filas = $('#tablaPosiciones').find('tbody tr').length;
 
         if (filas === 0) {
-            let html = '<tr id="trPosicion0"> <td>0</td> <td>' + posicion + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion" id="buttonEliminar-0">Eliminar</button></td> </tr>'
+            let html = '<tr id="trPosicion0"> <td>0</td> <td class="tdPosicion">' + posicion + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion" id="buttonEliminar-0">Eliminar</button></td> </tr>'
             $('#items').append(html);
         }
         else {
-            let filas = parseInt($('tbody tr:last td:first').html());
+            let filas = parseInt($('#tablaPosiciones tbody tr:last td:first').html());
             filas = filas + 1;
-            let html = '<tr id="trPosicion' + filas + '"> <td>' + filas + '</td> <td>' + posicion + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion" id="buttonEliminar-' + filas + '">Eliminar</button></td> </tr>'
+            let html = '<tr id="trPosicion' + filas + '">> <td>' + filas + '</td> <td class="tdPosicion">' + posicion + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarPosicion" id="buttonEliminar-' + filas + '">Eliminar</button></td> </tr>'
             $('#items').append(html);
         }
 
@@ -417,29 +530,24 @@ $(document.body).on('click', '.btnsEliminarPosicion', function () {
 
 $(document.body).on('click', '#buttonAgregarIncidencia', function () {
     let NomIncdencia = $('#inputNombreIncidencia').val();
-    let TipoIncdencia = $('#inputTipoIncidencia').val();
 
     if (!NomIncdencia) {
         alertManager('error', 'No se ingreso el nombre de la incidencia');
-    }
-    if (!TipoIncdencia) {
-        alertManager('error', 'No se ingreso el tipo de la incidencia');
     }
     else {
         let filas = $('#tablaIncidencias').find('tbody tr').length;
 
         if (filas === 0) {
-            let html = '<tr id="trIncidencia0"> <td>0</td> <td>' + NomIncdencia + '</td><td>'+TipoIncdencia+'</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-0">Eliminar</button></td> </tr>'
+            let html = '<tr id="trIncidencia0"> <td>0</td> <td class="incidenciaNombre">' + NomIncdencia + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-0">Eliminar</button></td> </tr>'
             $('#itemsIncidencia').append(html);
         }
         else {
             let filas = parseInt($('tbody tr:last td:first').html());
             filas = filas + 1;
-            let html = '<tr id="trIncidencia' + filas + '"> <td>' + filas + '</td> <td>' + NomIncdencia + '</td><td>'+TipoIncdencia+'</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-'+filas+'">Eliminar</button></td></tr>'
+            let html = '<tr id="trIncidencia' + filas + '"> <td>' + filas + '</td> <td <td class="incidenciaNombre">' + NomIncdencia + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-'+filas+'">Eliminar</button></td></tr>'
             $('#itemsIncidencia').append(html);
         }
 
-        $('#footerIncidencias').hide();
     }
 })
 /*********************************************************************
@@ -452,7 +560,56 @@ $(document.body).on('click', '.btnsEliminarIncidencia', function () {
 
     $("#trIncidencia" + id).remove();
 
-    if($('#tablaIncidencias').find('tbody tr').length === 0){
-        $('#footerIncidencias').show();
+})
+
+
+/**************************************************************
+ * CREAR DEPORTE
+ **************************************************************/
+ $(document.body).on('submit', '#updateDeporteForm', function (e) {
+    e.preventDefault();
+    let iddeporte = $('#iddeporte').val();
+    let nombre = $('#inputCreateNameDeporte').val();
+    let convocables = $('#inputConvocables').val();
+    let titulares = $('#inputTitulares').val();
+    let posiciones = [];
+    let incidencias = [];
+
+document.querySelectorAll('#tablaPosiciones tbody tr').forEach(function(e){
+  posiciones.push(e.querySelector('.tdPosicion').innerText);
+});
+
+document.querySelectorAll('#tablaIncidencias tbody tr').forEach(function(e){
+    incidencias.push(e.querySelector('.incidenciaNombre').innerText);
+  });
+
+  var formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('convocables', convocables);
+  formData.append('titulares', titulares);
+  formData.append('posiciones', JSON.stringify(posiciones));
+  formData.append('incidencias', JSON.stringify(incidencias));
+
+  
+  fetch(URLprefijoAPI + '/admin/updateDeporte/'+iddeporte, {
+    method: 'POST',
+    body: formData,
+    headers: {
+        'Authorization': token,
     }
 })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success == "1") {
+            alertManager('success', data.mensaje);
+        }
+        else {
+            alertManager('error', 'Hubo un error inesperado');
+        }
+    })
+    .catch(err => {
+        alertManager('error', 'Hubo un error inesperado');
+    })
+
+
+ });
