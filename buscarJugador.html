@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>S.I.G.D - Cambiar Contraseña</title>
+    <title>S.I.G.D - Buscar jugador</title>
     <link rel="icon" type="image/x-icon" href="assets/img/logo-pagina.png">
 
     <!-- Bootstrap -->
@@ -94,32 +94,28 @@
                 </div>
             </nav>
         </header>
-
+        <!-- Contenido de la pagina aca abajo -->
         <div class="container-fluid w-100">
-            <!-- Contenido de la pagina aca abajo -->
-            <form id="updatePasswordForm">
-                <p class="h3 text-center"><u>Cambiar contraseña</u></p>
-                <p class="h4 text-center pb-4">Usted solicito un cambio de contraseña para el correo: <span  id="emailSpan"></span></p>
+            <form id="getJugadorForm">
                 <div class="form-row justify-content-center">
-                    <div class="form-group col-md-3">
-                        <label for="inputNewPassword">Contraseña nueva:</label>
-                        <input type="password" class="form-control" id="inputNewPassword" required placeholder="***********">
+                    <div class="form-group col-md-6 w-50">
+                        <label for="inputGetJugador"><b>Buscar jugador por CI:</b></label>
+                        <input type="number" class="form-control" id="inputGetJugador" placeholder="C.I:" required>
                     </div>
                 </div>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-3">
-                        <label for="inputNewPassword2">Repita la contraseña:</label>
-                        <input type="password" class="form-control" id="inputNewPassword2" required placeholder="***********">
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-warning" id="updatePasswordButton"><i class="fas fa-user-edit"></i> Actualizar</button>
+                 <div class="text-center">
+                    <button type="submit" class="btn btn-primary" id="getJugadorSubmitButton"><i class="fas fa-search"></i> Buscar</button>
                     <div class="container w-50 mt-4">
                         <div class="alert" id="alert">Algo sucedió...</div>
                     </div>
                 </div>
+                <hr class="my-4">
             </form>
+
+            <div class="container" id="containerFormulario">
+                
         </div>
+        <!--  -->
     </div>
 
     <div class="overlay"></div>
@@ -135,12 +131,7 @@
     <!-- Auth -->
     <script src="assets/js/auth.js"></script>
 
-    <script src="assets/js/resetPassword"></script>
-
-    
-
-    <script>
-    </script>
+    <script src="assets/js/buscarJugador.js"></script>
 
 </body>
 

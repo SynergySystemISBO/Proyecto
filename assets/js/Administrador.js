@@ -61,24 +61,49 @@ $(document).ready(function () {
         e.preventDefault();
         var template = Handlebars.templates['createJugadorform'];
 
-        $('#containerFormulario').html(template());
+        fetch(URLprefijoAPI + '/getPosicionesDeportes', {
+            method: 'GET',
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success == "1") {
+                    let dataPosiciones = {
+                        'posiciones': data['posiciones'],
+                    };
+
+                        $('#containerFormulario').html(template(dataPosiciones));
+                        $('.inputPosicionJugador').select2({
+                            placeholder: "Busca una posicion",
+                        });
+                    
+                    
+                }
+            })
+            .catch(err => {
+                alertManager('error', 'Hubo un error inesperado');
+            })
     })
 
     $('#navUpdateJugador').click(function (e) {
         e.preventDefault();
         var template = Handlebars.templates['getJugador'];
 
-        barraDeBusqueda = 'update';
+        $('#containerFormulario').html(template());
+    })
+
+
+    //Equipos
+    $('#navCreateEquipo').click(function (e) {
+        e.preventDefault();
+        var template = Handlebars.templates['createequipoform'];
 
         $('#containerFormulario').html(template());
     })
 
 
-    $('#navDeleteJugador').click(function (e) {
+    $('#navUpdateUser').click(function (e) {
         e.preventDefault();
-        var template = Handlebars.templates['getJugador'];
-
-        barraDeBusqueda = 'delete';
+        var template = Handlebars.templates['getEquipoSearch'];
 
         $('#containerFormulario').html(template());
     })
@@ -130,13 +155,10 @@ $(document.body).on("submit", "#getUserForm", function (e) {
                         $el.find('[value="' + value + '"]').attr({ 'selected': 'selected' });
                         return $el.html();
                     });
-                    if ($('#' + barraDeBusqueda + 'UserForm').length) {
-                        $('#' + barraDeBusqueda + 'UserForm').remove();
-                        $('#containerFormulario').append(template(dataUser));
-                    }
-                    else {
-                        $('#containerFormulario').append(template(dataUser));
-                    }
+
+                        $('#containerFormulario').html(template(dataUser));
+                    
+                   
                 }
                 else {
                     $('#getUserSubmitButton').prop('disabled', true);
@@ -364,7 +386,7 @@ $(document.body).on("click", "#buttonDeleteUser", function (e) {
 /***************************************************************
  * OBTENER DEPORTE
  *************************************************************/
- $(document.body).on("submit", "#getDeporteForm", function (e) {
+$(document.body).on("submit", "#getDeporteForm", function (e) {
     //Formulario de registrar usuario
     e.preventDefault();
     var deporte = $('#inputGetDeporte').val();
@@ -397,22 +419,14 @@ $(document.body).on("click", "#buttonDeleteUser", function (e) {
                         posiciones: data['posiciones'],
                         incidencias: data['incidencias'],
                     };
-
-
-                    if ($('#' + barraDeBusqueda + 'DeporteForm').length) {
-                        $('#' + barraDeBusqueda + 'DeporteForm').remove();
-                        $('#containerFormulario').append(template( dataDeporte));
-                    }
-                    else {
-                        $('#containerFormulario').append(template( dataDeporte));
-                    }
+                        $('#containerFormulario').html(template(dataDeporte));
                 }
-                 else {
-                     $('#getUserSubmitButton').prop('disabled', true);
-                     alertManager('error', 'No existe el deporte o hubo un error');
-                     setTimeout(() => {
-                         $('#getUserSubmitButton').prop('disabled', false);
-                     }, 3500);
+                else {
+                    $('#getUserSubmitButton').prop('disabled', true);
+                    alertManager('error', 'No existe el deporte o hubo un error');
+                    setTimeout(() => {
+                        $('#getUserSubmitButton').prop('disabled', false);
+                    }, 3500);
                 }
             })
             .catch(err => {
@@ -435,7 +449,7 @@ $(document.body).on("click", "#buttonDeleteUser", function (e) {
 /**************************************************************
  * CREAR DEPORTE
  **************************************************************/
- $(document.body).on('submit', '#createDeporteForm', function (e) {
+$(document.body).on('submit', '#createDeporteForm', function (e) {
     e.preventDefault();
     let nombre = $('#inputCreateNameDeporte').val();
     let convocables = $('#inputConvocables').val();
@@ -443,50 +457,50 @@ $(document.body).on("click", "#buttonDeleteUser", function (e) {
     let posiciones = [];
     let incidencias = [];
 
-document.querySelectorAll('#tablaPosiciones tbody tr').forEach(function(e){
-  posiciones.push(e.querySelector('.tdPosicion').innerText);
-});
+    document.querySelectorAll('#tablaPosiciones tbody tr').forEach(function (e) {
+        posiciones.push(e.querySelector('.tdPosicion').innerText);
+    });
 
-document.querySelectorAll('#tablaIncidencias tbody tr').forEach(function(e){
-    incidencias.push(e.querySelector('.incidenciaNombre').innerText);
-  });
+    document.querySelectorAll('#tablaIncidencias tbody tr').forEach(function (e) {
+        incidencias.push(e.querySelector('.incidenciaNombre').innerText);
+    });
 
-  var formData = new FormData();
-  formData.append('nombre', nombre);
-  formData.append('convocables', convocables);
-  formData.append('titulares', titulares);
-  formData.append('posiciones', JSON.stringify(posiciones));
-  formData.append('incidencias', JSON.stringify(incidencias));
-  
-  fetch(URLprefijoAPI + '/admin/createDeporte', {
-    method: 'POST',
-    body: formData,
-    headers: {
-        'Authorization': token,
-    }
-})
-    .then(res => res.json())
-    .then(data => {
-        if (data.success == "1") {
-            alertManager('success', data.mensaje);
-            this.reset();
+    var formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('convocables', convocables);
+    formData.append('titulares', titulares);
+    formData.append('posiciones', JSON.stringify(posiciones));
+    formData.append('incidencias', JSON.stringify(incidencias));
+
+    fetch(URLprefijoAPI + '/admin/createDeporte', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Authorization': token,
         }
-        else {
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success == "1") {
+                alertManager('success', data.mensaje);
+                this.reset();
+            }
+            else {
+                alertManager('error', data.mensaje);
+            }
+        })
+        .catch(err => {
             alertManager('error', data.mensaje);
-        }
-    })
-    .catch(err => {
-        alertManager('error', data.mensaje);
-    })
+        })
 
 
- });
+});
 
 
 /*********************************************************************
  * Agregar posiciones a la tabla
  ********************************************************************/
- $(document.body).on('click', '#buttonAgregarPosicion', function () {
+$(document.body).on('click', '#buttonAgregarPosicion', function () {
     let posicion = $('#inputPosicion').val();
 
     if (!posicion) {
@@ -519,7 +533,7 @@ $(document.body).on('click', '.btnsEliminarPosicion', function () {
 
     $("#trPosicion" + id).remove();
 
-    if($('#tablaPosiciones').find('tbody tr').length === 0){
+    if ($('#tablaPosiciones').find('tbody tr').length === 0) {
         $('#footerPosiciones').show();
     }
 })
@@ -544,7 +558,7 @@ $(document.body).on('click', '#buttonAgregarIncidencia', function () {
         else {
             let filas = parseInt($('tbody tr:last td:first').html());
             filas = filas + 1;
-            let html = '<tr id="trIncidencia' + filas + '"> <td>' + filas + '</td> <td <td class="incidenciaNombre">' + NomIncdencia + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-'+filas+'">Eliminar</button></td></tr>'
+            let html = '<tr id="trIncidencia' + filas + '"> <td>' + filas + '</td> <td <td class="incidenciaNombre">' + NomIncdencia + '</td><td><button type="button" class="btn btn-outline-danger float-right btnsEliminarIncidencia" id="buttonEliminarIncidencia-' + filas + '">Eliminar</button></td></tr>'
             $('#itemsIncidencia').append(html);
         }
 
@@ -564,9 +578,9 @@ $(document.body).on('click', '.btnsEliminarIncidencia', function () {
 
 
 /**************************************************************
- * CREAR DEPORTE
+ * MODIFICAR DEPORTE
  **************************************************************/
- $(document.body).on('submit', '#updateDeporteForm', function (e) {
+$(document.body).on('submit', '#updateDeporteForm', function (e) {
     e.preventDefault();
     let iddeporte = $('#iddeporte').val();
     let nombre = $('#inputCreateNameDeporte').val();
@@ -575,41 +589,208 @@ $(document.body).on('click', '.btnsEliminarIncidencia', function () {
     let posiciones = [];
     let incidencias = [];
 
-document.querySelectorAll('#tablaPosiciones tbody tr').forEach(function(e){
-  posiciones.push(e.querySelector('.tdPosicion').innerText);
+    document.querySelectorAll('#tablaPosiciones tbody tr').forEach(function (e) {
+        posiciones.push(e.querySelector('.tdPosicion').innerText);
+    });
+
+    document.querySelectorAll('#tablaIncidencias tbody tr').forEach(function (e) {
+        incidencias.push(e.querySelector('.incidenciaNombre').innerText);
+    });
+
+    var formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('convocables', convocables);
+    formData.append('titulares', titulares);
+    formData.append('posiciones', JSON.stringify(posiciones));
+    formData.append('incidencias', JSON.stringify(incidencias));
+
+
+    fetch(URLprefijoAPI + '/admin/updateDeporte/' + iddeporte, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Authorization': token,
+        }
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success == "1") {
+                alertManager('success', data.mensaje);
+            }
+            else {
+                alertManager('error', 'Hubo un error inesperado');
+            }
+        })
+        .catch(err => {
+            alertManager('error', 'Hubo un error inesperado');
+        })
+
+
 });
 
-document.querySelectorAll('#tablaIncidencias tbody tr').forEach(function(e){
-    incidencias.push(e.querySelector('.incidenciaNombre').innerText);
-  });
 
-  var formData = new FormData();
-  formData.append('nombre', nombre);
-  formData.append('convocables', convocables);
-  formData.append('titulares', titulares);
-  formData.append('posiciones', JSON.stringify(posiciones));
-  formData.append('incidencias', JSON.stringify(incidencias));
+/**************************************************************
+ * BUSCAR JUGADOR PARA ACTUALIZAR
+ **************************************************************/
+$(document.body).on('submit', '#getJugadorForm', function (e) {
+    e.preventDefault();
+    let ci = $('#inputGetJugador').val();
 
-  
-  fetch(URLprefijoAPI + '/admin/updateDeporte/'+iddeporte, {
-    method: 'POST',
-    body: formData,
-    headers: {
-        'Authorization': token,
-    }
-})
-    .then(res => res.json())
-    .then(data => {
-        if (data.success == "1") {
-            alertManager('success', data.mensaje);
-        }
-        else {
+
+    fetch(URLprefijoAPI + '/getJugador/' + ci, {
+        method: 'GET',
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success == "1") {
+                alertManager('success', data.mensaje);
+
+                var template = Handlebars.templates['updateJugadorForm'];
+
+                fetch(URLprefijoAPI + '/getPosicionesDeportes', {
+                    method: 'GET',
+                })
+                    .then(res => res.json())
+                    .then(data2 => {
+                        if (data2.success == "1") {
+                            let dataJugador = {
+                                ci: data.data['cijugador'],
+                                nombre: data.data['nomjugador'],
+                                apellido: data.data['apjugador'],
+                                peso: data.data['peso'],
+                                altura: data.data['altura'],
+                                dorsal: data.data['dorsal'],
+                                nac: data.data['fechanacjugador'],
+                                posiciones: data2['posiciones'],
+                            };
+                                $('#containerFormulario').html(template(dataJugador));
+                                $('.inputPosicionJugador').select2({
+                                    placeholder: "Busca una posicion",
+                                });                       
+                        }
+                    })
+                    .catch(err => {
+                        alertManager('error', 'Hubo un error inesperado');
+                    })
+            }
+            else {
+                alertManager('error', data.mensaje);
+            }
+        })
+        .catch(err => {
             alertManager('error', 'Hubo un error inesperado');
+        })
+
+
+});
+
+/**************************************************************
+* CREAR JUGADOR
+**************************************************************/
+$(document.body).on('submit', '#createJugadorForm', function (e) {
+    e.preventDefault();
+    let ci = $('#inputCreateCIUser').val();
+    let nombre = $('#inputCreateNameJugador').val();
+    let apellido = $('#inputCreateApellidoJugador').val();
+    let peso = $('#inputCreatePesoJugador').val();
+    let dorsal = $('#inputCreateDorsalJugador').val();
+    let altura = $('#inputCreateAlturaJugador').val();
+    let nac = $('#inputFechaNacJugador').val();
+    let select = $("#inputPosicionJugador").val();
+
+    let posicion = select.split('-')[0];
+    let deporte = select.split('-')[1];
+    var formData = new FormData();
+    formData.append('ci', ci);
+    formData.append('nombre', nombre);
+    formData.append('apellido', apellido);
+    formData.append('peso', peso);
+    formData.append('dorsal', dorsal);
+    formData.append('altura', altura);
+    formData.append('nac', nac);
+    formData.append('idposicion', posicion);
+    formData.append('iddeporte', deporte);
+
+
+    fetch(URLprefijoAPI + '/admin/createJugador/', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Authorization': token,
         }
     })
-    .catch(err => {
-        alertManager('error', 'Hubo un error inesperado');
+        .then(res => res.json())
+        .then(data => {
+            if (data.success == "1") {
+                alertManager('success', data.mensaje);
+                this.reset();
+            }
+            else {
+                alertManager('error', 'Hubo un error inesperado');
+            }
+        })
+        .catch(err => {
+            alertManager('error', 'Hubo un error inesperado');
+        })
+});
+
+
+/**************************************************************
+* MODIFICAR JUGADOR
+**************************************************************/
+$(document.body).on('submit', '#updateJugadorForm', function (e) {
+    e.preventDefault();
+    let ci = $('#inputUpdateCIUser').val();
+    let ciAntiguo = $('#inputCIAntiguo').val();
+    let nombre = $('#inputUpdateNameJugador').val();
+    let apellido = $('#inputUpdateApellidoJugador').val();
+    let peso = $('#inputUpdatePesoJugador').val();
+    let dorsal = $('#inputUpdateDorsalJugador').val();
+    let altura = $('#inputUpdateAlturaJugador').val();
+    let nac = $('#inputFechaNacJugador').val();
+
+    let select = $("#inputPosicionJugador").val();
+
+    let posicion = select.split('-')[0];
+    let deporte = select.split('-')[1];
+
+    var formData = new FormData();
+    formData.append('ci', ci);
+    formData.append('ciAntiguo', ciAntiguo);
+    formData.append('nombre', nombre);
+    formData.append('apellido', apellido);
+    formData.append('peso', peso);
+    formData.append('dorsal', dorsal);
+    formData.append('altura', altura);
+    formData.append('nac', nac);
+    formData.append('idposicion', posicion);
+    formData.append('iddeporte', deporte);
+
+
+    fetch(URLprefijoAPI + '/admin/updateJugador', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Authorization': token,
+        }
     })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success == "1") {
+                alertManager('success', data.mensaje);
+            }
+            else {
+                alertManager('error', 'Hubo un error inesperado');
+            }
+        })
+        .catch(err => {
+            alertManager('error', 'Hubo un error inesperado');
+        })
+});
 
 
- });
+
+
+
+
+

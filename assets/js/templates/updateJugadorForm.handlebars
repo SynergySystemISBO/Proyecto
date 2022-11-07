@@ -1,0 +1,61 @@
+
+<form id="updateJugadorForm">
+    <p class="h3 text-center"><u>Modificar jugador</u></p>
+    <input type="number" id="inputCIAntiguo" hidden disabled value="{{ci}}">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputUpdateCIUser">C.I</label>
+            <input type="number" class="form-control" id="inputUpdateCIUser" placeholder="XXXXXXXX" value="{{ci}}"
+                required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputFechaNacJugador">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" id="inputFechaNacJugador" value="{{nac}}" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputUpdateNameJugador">Nombre</label>
+            <input type="text" class="form-control" id="inputUpdateNameJugador" placeholder="Nombre..."
+                value="{{nombre}}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputUpdateApellidoJugador">Apellido</label>
+            <input type="text" class="form-control" id="inputUpdateApellidoJugador" value="{{apellido}}"
+                placeholder="Apellido..." required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputUpdatePesoJugador">Peso</label>
+            <input type="number" class="form-control" id="inputUpdatePesoJugador" placeholder="Pesoº..."
+                value="{{peso}}" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputUpdateAlturaJugador">Altura</label>
+            <input type="number" class="form-control" id="inputUpdateAlturaJugador" value="{{altura}}"
+                placeholder="Altura..." required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputUpdateDorsalJugador">Dorsal</label>
+            <input type="number" class="form-control" id="inputUpdateDorsalJugador" value="{{dorsal}}"
+                placeholder="Dorsal..." required>
+        </div>
+    </div>
+    <div class="form-row justify-content-center mb-2">
+        <label for="inputPosicionJugador">Posicion</label>
+        <select id="inputPosicionJugador" class="inputPosicionJugador form-control" name="posiciones[]">
+            <option selected value="" hidden>Elige una opcion:</option>
+            {{#each posiciones}}
+            <option value="{{this.idposicion}}-{{this.iddeporte}}">{{this.nombre}} - {{this.nomdeporte}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-warning" id="updateUserSubmitButton"><i class="fas fa-user-plus"></i></i>
+            Modificar</button>
+        <div class="container w-50 mt-4">
+            <div class="alert" id="alert">Algo sucedió...</div>
+        </div>
+    </div>
+</form>

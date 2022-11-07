@@ -65,7 +65,7 @@
                 </ul>
             </li>
             <li>
-                <a href="jugadores.html">Jugadores</a>
+                <a href="buscarJugador.html">Jugadores</a>
             </li>
             <li>
                 <a href="equipos.html">Equipos</a>
@@ -139,24 +139,66 @@
             </div>
 
             <div class="text-center">
-                <a class="btn btn-outline-info btn-lg mt-4">Ver todos los deportes</a>
+                <a class="btn btn-outline-info btn-lg mt-4" data-toggle="modal" data-target="#DeportesModal">Ver todos
+                    los deportes</a>
             </div>
-            <!-- Contenido de la pagina arriba de aca -->
-        </div>
-    </div>
 
-    <div class="overlay"></div>
+            <div class="modal fade" id="DeportesModal" tabindex="-1" aria-labelledby="DeportesModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="DeportesModalLabel">Lista de deportes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container w-75" id="containerModalDeportes">
 
-    <!-- jQuery-->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Handlebars -->
-    <script src="assets/js/handlebars-v4.7.7.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contenido de la pagina arriba de aca -->
+                </div>
+            </div>
 
-    <script src="assets/js/templates.js"></script>
+            <div class="overlay"></div>
 
-    <script src="assets/js/auth.js"></script>
+            <!-- jQuery-->
+            <script src="assets/js/jquery-3.6.0.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="assets/js/bootstrap.bundle.min.js"></script>
+            <!-- Handlebars -->
+            <script src="assets/js/handlebars-v4.7.7.js"></script>
+
+            <script src="assets/js/templates.js"></script>
+
+            <script src="assets/js/auth.js"></script>
+
+            <script>
+                $(document).ready(function () {
+                    fetch(URLprefijoAPI + '/getDeportes', {
+                        method: 'GET',
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.success == "1") {
+                                var template = Handlebars.templates['listaDeportes'];
+                                let dataDeporte = {
+                                    deportes: data.deportes
+                                };
+                                $('#containerModalDeportes').append(template(dataDeporte));
+                            }
+                            else {
+                                console.log('prueba');
+                            }
+                        })
+                        .catch(err => {
+                            console.log('prueba')
+                        })
+                })
+            </script>
 
 </body>
 
