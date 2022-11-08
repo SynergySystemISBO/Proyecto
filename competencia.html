@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>S.I.G.D - Competencias</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo-pagina.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- Barra lateral -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <a href="index.html" title="Ir al menu principal">
+                <img src="assets/img/logo-pagina.png" alt="" class="logo-image" />
+                <h3>S.I.G.D</h3>
+            </a>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <p>Bienvenido!</p>
+            </li>
+            <li class="active">
+                <a href="index.html">Menú Principal</a>
+            </li>
+            <li id="liMenuExtra">
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Competencias
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="competencias.html?deporte=Futbol">Fútbol</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html?deporte=Basketball">Basketball</a>
+                    </li>
+                    <li>
+                        <a href="competencias.html?deporte=Handball">Handball</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="buscarJugador.html">Jugadores</a>
+            </li>
+            <li>
+                <a href="equipo.html">Equipos</a>
+            </li>
+            <li style='background-color: brown; border-radius: 5px;' id="liLogout">
+            </li>
+
+        </ul>
+    </nav>
+    <!-- Fin barra lateral -->
+    <!-- NavBar y Contenido  -->
+    <div id="content">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark mt-2">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+
+                    <a class="mt-2 btn btn-outline-dark float-right" href="login.html" id="nomUsuario"><i
+                            class="fa fa-user"></i>
+                        Iniciar sesión
+                    </a>
+
+                </div>
+            </nav>
+        </header>
+
+        <div class="container-fluid w-100">
+            <!-- Contenido de la pagina aca abajo -->
+            <div class="text-center">
+                
+                <h1>Copa Ejemplo</h1>
+            
+            
+
+            <div class="row" id="tabla-fixture">
+
+                <!-- PRIMERA COLUMNA-->
+                <div class="col-sm-12 col-xmd-7 col-lg-7 col-xl-7 py-5 bg-transparent">
+                    <h2>Tabla de posiciones</h2>
+                    <div class="table-responsive mt-4">
+                        <table class="table table-hover table-dark table-striped">
+                            <tr>
+                                <th colspan="2">
+                                    <div class="equipos">
+                                        <p>EQUIPOS</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-item">
+                                        <p>PJ</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-item">
+                                        <p>PG</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-item">
+                                        <p>PE</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-item">
+                                        <p>PP</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-item">
+                                        <p>GF</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-item">
+                                        <p>GC</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-dif">
+                                        <p>DIF</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-ult-p">
+                                        <p>ULT-P</p>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="e-pts">
+                                        <p>PTS</p>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="equipo">
+                                    <div class="equipos">
+                                        <p>Equipo 1</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item1">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dif">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ult-p">
+                                        <p>0-0-0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pts">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="equipo">
+                                    <div class="equipos">
+                                        <p>Equipo 1</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item1">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dif">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ult-p">
+                                        <p>0-0-0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pts">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="equipo">
+                                    <div class="equipos">
+                                        <p>Equipo 1</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item1">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dif">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ult-p">
+                                        <p>0-0-0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pts">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="equipo">
+                                    <div class="equipos">
+                                        <p>Equipo 1</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item1">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dif">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ult-p">
+                                        <p>0-0-0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pts">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="equipo">
+                                    <div class="equipos">
+                                        <p>Equipo 1</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item1">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="dif">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="ult-p">
+                                        <p>0-0-0</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pts">
+                                        <p>0</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="pieTabla">PJ - partidos jugados | PG - partidos ganados | PE - partidos
+                        empatados | PP - partidos perdidos | GF - goles a favor |
+                        GC - goles en contra | DIF - diferencia de goles | ULT. P - resultados ultimos 5
+                        partidos </p>
+                </div>
+                <!--SEGUNDA COLUMNA-->
+                <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 py-5 bg-transparent">
+                    <h2>FIXTURE</h2>
+                    <div class="table-responsive mt-4">
+                        <table class="table table-hover table-dark table-striped">
+                            <tr>
+                                <th>
+                                    <p>FECHA 1</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 1 vs EQUIPO 2</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 3 vs EQUIPO 4</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>FECHA LIBRE: EQUIPO 5</p>
+                                </td>
+                            </tr>
+                            <tr><th class="separadorTabla"></th></tr>
+                            <tr>
+                                <th>
+                                    <p>FECHA 2</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 1 vs EQUIPO 3</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 2 vs EQUIPO 5</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>FECHA LIBRE: EQUIPO 4</p>
+                                </td>
+                            </tr>
+                            <tr><th class="separadorTabla"></th></tr>
+                            <tr>
+                                <th>
+                                    <p>FECHA 3</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 2 vs EQUIPO 3</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 4 vs EQUIPO 5</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>FECHA LIBRE: EQUIPO 1</p>
+                                </td>
+                            </tr>
+                            <tr><th class="separadorTabla"></th></tr>
+                            <tr>
+                                <th>
+                                    <p>FECHA 4</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 5 vs EQUIPO 3</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 1 vs EQUIPO 4</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>FECHA LIBRE: EQUIPO 2</p>
+                                </td>
+                            </tr>
+                            <tr><th class="separadorTabla"></th></tr>
+                            <tr>
+                                <th>
+                                    <p>FECHA 5</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 5 vs EQUIPO 1</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>EQUIPO 2 vs EQUIPO 4</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>FECHA LIBRE: EQUIPO 3</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="estadisticas">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-5 bg-transparent">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark table-striped">
+                            <tr>
+                                <th colspan="3"><p>TABLA GOLEADORES</p></th>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><p>Equipo</p></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Nombre</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>Goles</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 py-5 bg-transparent">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark table-striped">
+                            <tr>
+                                <th colspan="3"><p>TABLA LIDER EN ASISTENCIAS</p></th>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><p>Equipo</p></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Nombre</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>Asistencias</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="escudo">
+                                    <div class="escudos"><img src="/assets/img/escudo.png" alt="escudo" class="escudo-tabla"></div>
+                                </td>
+                                <td class="jugador">
+                                    <div class="jugadores"><p>Jugador EJEMPLO</p></div>
+                                </td>
+                                <td class="gol">
+                                    <div class="goles">
+                                        <p>9</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+              </div>
+
+        </div>
+            <!-- Contenido de la pagina arriba de aca -->
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jQuery-->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Handlebars -->
+    <script src="assets/js/handlebars-v4.7.7.js"></script>
+
+    <script src="assets/js/templates.js"></script>
+
+    <script src="assets/js/auth.js"></script>
+
+    <script src="assets/js/competencias.js"></script>
+
+</body>
+
+</html>

@@ -183,3 +183,7 @@ function VerificarQueNoRequieraToken() {
         throw 'No se puede ingresar a esta vista logueado';
     }
 }
+
+$('#nomUsuario').click(function (e) {
+    e.preventDefault();
+})

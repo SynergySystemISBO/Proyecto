@@ -1,0 +1,68 @@
+<form id="createEquipoForm">
+    <p class="h3 text-center"><u>Crear equipo</u></p>
+    <fieldset>
+        <legend>Datos:</legend>
+        <label for="inputCreateNameDeporte">Nombre</label>
+        <input type="text" class="form-control" id="inputCreateNameEquipo" placeholder="Nombre..." required>
+
+
+        <label for="inputEntrenador">Entrenador</label>
+        <select id="inputEntrenador" class="inputEntrenador form-control" name="posiciones[]">
+            <option selected value="" hidden>Elige una opcion:</option>
+            {{#each entrenador}}
+            <option value="{{this.id}}">{{this.nombre}} {{this.apellido}}</option>
+            {{/each}}
+        </select>
+
+        <label for="inputDeporteEquipo">Deporte</label>
+        <input type="text" class="form-control" id="inputDeporteEquipo" placeholder="Nombre del deporte..." required>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Jugadores:</legend>
+        <div class="form-row">
+            <div class="col">
+                <div class="form-outline mb-3">
+                    <label for="inputCIJugador">CI del jugador:</label>
+                    <div class="input-group">
+                        <input type="number" id="inputCIJugador" class="form-control" placeholder="CI..." />
+                        <div class="input-group-append">
+                            <button id="buttonAgregarJugador" class="btn btn-primary" type="button"><i
+                                    class="fas fa-plus-circle"></i> Agregar </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive-sm">
+            <table class="table" id="tablaJugadores">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">CI</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody id="itemsJugador">
+
+                </tbody>
+                <tfoot>
+                    <tr id="footerJugadores" class="text-center">
+                        <th scope="row" colspan="5">No hay jugadores agregados aún</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </fieldset>
+
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary mt-3" id="createEquipoSubmitButton"><i
+                class="fas fa-plus-circle"></i> Crear</button>
+        <div class="container w-50 mt-4">
+            <div class="alert" id="alert">Algo sucedió...</div>
+        </div>
+    </div>
+
+</form>

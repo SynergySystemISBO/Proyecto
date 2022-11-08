@@ -54,13 +54,13 @@
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="competencias.html">Fútbol</a>
+                        <a href="competencias.html?deporte=Futbol">Fútbol</a>
                     </li>
                     <li>
-                        <a href="competencias.html">Basketball</a>
+                        <a href="competencias.html?deporte=Basketball">Basketball</a>
                     </li>
                     <li>
-                        <a href="competencias.html">Handball</a>
+                        <a href="competencias.html?deporte=Handball">Handball</a>
                     </li>
                 </ul>
             </li>
@@ -68,7 +68,7 @@
                 <a href="buscarJugador.html">Jugadores</a>
             </li>
             <li>
-                <a href="equipos.html">Equipos</a>
+                <a href="equipo.html">Equipos</a>
             </li>
             <li style='background-color: brown; border-radius: 5px;' id="liLogout">
             </li>
@@ -105,7 +105,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <a class="card-block stretched-link text-decoration-none" href="competencias.html">
+                    <a class="card-block stretched-link text-decoration-none" href="competencias.html?deporte=Futbol">
                         <div class="card mb-2">
                             <img class="card-img-top" src="assets/img/futbol.png" alt="Card image cap">
                             <div class="card-body text-center">
@@ -116,7 +116,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a class="card-block stretched-link text-decoration-none" href="competencias.html">
+                    <a class="card-block stretched-link text-decoration-none" href="competencias.html?deporte=Basketball">
                         <div class="card mb-2">
                             <img class="card-img-top" src="assets/img/basketball.png" alt="Card image cap">
                             <div class="card-body text-center">
@@ -127,7 +127,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <a class="card-block stretched-link text-decoration-none" href="competencias.html">
+                    <a class="card-block stretched-link text-decoration-none" href="competencias.html?deporte=Handball">
                         <div class="card mb-2">
                             <img class="card-img-top" src="assets/img/handball.jpg" alt="Card image cap">
                             <div class="card-body text-center">
@@ -176,29 +176,7 @@
 
             <script src="assets/js/auth.js"></script>
 
-            <script>
-                $(document).ready(function () {
-                    fetch(URLprefijoAPI + '/getDeportes', {
-                        method: 'GET',
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            if (data.success == "1") {
-                                var template = Handlebars.templates['listaDeportes'];
-                                let dataDeporte = {
-                                    deportes: data.deportes
-                                };
-                                $('#containerModalDeportes').append(template(dataDeporte));
-                            }
-                            else {
-                                console.log('prueba');
-                            }
-                        })
-                        .catch(err => {
-                            console.log('prueba')
-                        })
-                })
-            </script>
+            <script src='assets/js/index.js'></script>
 
 </body>
 

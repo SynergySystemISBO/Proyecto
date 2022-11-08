@@ -13,6 +13,10 @@ $(document.body).on('submit', '#getJugadorForm', function (e) {
             
             var template = Handlebars.templates['infoJugador'];
 
+            if(data.data['nomequipo']===null){
+                data.data['nomequipo'] = 'No tiene equipo';
+            }
+
             let dataJugador = {
                 nombre: data.data['nomjugador'],
                 apellido: data.data['apjugador'],
@@ -20,7 +24,9 @@ $(document.body).on('submit', '#getJugadorForm', function (e) {
                 altura: data.data['altura'],
                 dorsal: data.data['dorsal'],
                 nac: data.data['fechanacjugador'],
-                posicion: data.data['nomposicion']
+                posicion: data.data['nomposicion'],
+                equipo: data.data['nomequipo'],
+                incidencias: data.incidencias
             };
 
             if ($('#jugadorInfoDiv').length) {

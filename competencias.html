@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>S.I.G.D - Cambiar Contraseña</title>
+    <title>S.I.G.D - Competencias</title>
     <link rel="icon" type="image/x-icon" href="assets/img/logo-pagina.png">
 
     <!-- Bootstrap -->
@@ -43,10 +43,10 @@
             <li>
                 <p>Bienvenido!</p>
             </li>
-            <li>
+            <li class="active">
                 <a href="index.html">Menú Principal</a>
             </li>
-            <li id="liMenuExtra" class="active">
+            <li id="liMenuExtra">
             </li>
             <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -97,28 +97,10 @@
 
         <div class="container-fluid w-100">
             <!-- Contenido de la pagina aca abajo -->
-            <form id="updatePasswordForm">
-                <p class="h3 text-center"><u>Cambiar contraseña</u></p>
-                <p class="h4 text-center pb-4">Usted solicito un cambio de contraseña para el correo: <span  id="emailSpan"></span></p>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-3">
-                        <label for="inputNewPassword">Contraseña nueva:</label>
-                        <input type="password" class="form-control" id="inputNewPassword" required placeholder="***********">
-                    </div>
-                </div>
-                <div class="form-row justify-content-center">
-                    <div class="form-group col-md-3">
-                        <label for="inputNewPassword2">Repita la contraseña:</label>
-                        <input type="password" class="form-control" id="inputNewPassword2" required placeholder="***********">
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-warning" id="updatePasswordButton"><i class="fas fa-user-edit"></i> Actualizar</button>
-                    <div class="container w-50 mt-4">
-                        <div class="alert" id="alert">Algo sucedió...</div>
-                    </div>
-                </div>
-            </form>
+            <h1 class="text-center">Competencias</h1>
+            <h2 class="text-center" id="h2Deporte"></h2>
+            <div id="containerCompetencias"></div>
+            <!-- Contenido de la pagina arriba de aca -->
         </div>
     </div>
 
@@ -130,17 +112,12 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- Handlebars -->
     <script src="assets/js/handlebars-v4.7.7.js"></script>
-    <!-- Templates -->
+
     <script src="assets/js/templates.js"></script>
-    <!-- Auth -->
+
     <script src="assets/js/auth.js"></script>
 
-    <script src="assets/js/resetPassword"></script>
-
-    
-
-    <script>
-    </script>
+    <script src="assets/js/competencias.js"></script>
 
 </body>
 
